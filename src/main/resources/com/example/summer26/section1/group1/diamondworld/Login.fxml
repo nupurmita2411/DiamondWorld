@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.loginController">
+    <children>
+        <TextField fx:id="UserNameTF" layoutX="138.0" layoutY="37.0" />
+        <Text layoutX="68.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name:" />
+        <PasswordField fx:id="PasswordF" layoutX="138.0" layoutY="82.0" />
+        <Text layoutX="68.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
+        <Button layoutX="140.0" layoutY="128.0" mnemonicParsing="false" onAction="#LoginButtonOA" prefHeight="25.0" prefWidth="113.0" />
+        <Text layoutX="94.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogIn:" />
+        <Label fx:id="ErrorLabel" layoutX="109.0" layoutY="234.0" prefHeight="135.0" prefWidth="302.0" />
+    </children>
+</AnchorPane>
