@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ReceiptManagementController">
+
+    <!-- Top Section: Title & Return Home Button (Event-8) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="900.0" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 0 20;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnReturnHome" mnemonicParsing="false" onAction="#handleReturnHome" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Return Home" />
+                <Label text="Receipt Management - Print Purchase Receipt" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center Section: Search Bar, Receipt Preview & Action Buttons -->
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+
+                <!-- Search Bar Area (Event-3) -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;">
+                    <children>
+                        <Label text="Invoice Number:" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtInvoiceNumber" prefHeight="35.0" prefWidth="300.0" promptText="Enter Invoice Number (e.g. INV-1001)" />
+                        <Button fx:id="btnSearchInvoice" mnemonicParsing="false" onAction="#handleSearchInvoice" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="Search Invoice" />
+                    </children>
+                </HBox>
+
+                <!-- Complete Receipt Information Area (Event-7) -->
+                <VBox spacing="10.0" VBox.vgrow="ALWAYS" style="-fx-background-color: #fafafa; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 5;">
+                    <children>
+                        <Label text="Purchase Receipt Preview" textFill="#34495e">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="txtReceiptDetails" editable="false" prefHeight="380.0" promptText="Search an invoice number above to preview the complete purchase receipt details (customer, products, tax, discount, transaction info)..." VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Monospaced Regular" size="13.0" />
+                            </font>
+                        </TextArea>
+                    </children>
+                </VBox>
+
+                <!-- Bottom Action Bar (Event-7) -->
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="btnPrintReceipt" mnemonicParsing="false" onAction="#handlePrintReceipt" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="🖨 Print Receipt" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
