@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User7goal5">
+    <children>
+        <Label layoutX="190.0" layoutY="20.0" text="Low Stock Monitoring" textFill="#2c3e50">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+
+        <!-- event-4: ComboBox to filter by Category or Branch -->
+        <ComboBox fx:id="cmbFilter" layoutX="40.0" layoutY="70.0" prefWidth="180.0" promptText="Filter Category / Branch" />
+
+        <!-- event-5: Button "Generate Alert List" -->
+        <Button layoutX="240.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnGenerateAlertListOnClick" text="Generate Alert List" />
+
+        <!-- event-3: TableView showing low stock products -->
+        <TableView fx:id="tblLowStock" layoutX="40.0" layoutY="115.0" prefHeight="260.0" prefWidth="570.0">
+            <columns>
+                <TableColumn fx:id="colProductId" prefWidth="120.0" text="Product ID" />
+                <TableColumn fx:id="colProductName" prefWidth="180.0" text="Product Name" />
+                <TableColumn fx:id="colCurrentStock" prefWidth="130.0" text="Current Stock" />
+                <TableColumn fx:id="colMinStock" prefWidth="138.0" text="Minimum Stock Level" />
+            </columns>
+        </TableView>
+
+        <!-- event-6: Label showing total low-stock items -->
+        <Label layoutX="40.0" layoutY="390.0" prefHeight="19.0" prefWidth="180.0" text="Total Low Stock Items: 0" textFill="#e74c3c">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+
+        <!-- event-7: Button "Request Restock" and Confirmation Label -->
+        <Button layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#btnRequestRestockOnClick" text="Request Restock" />
+        <Label fx:id="lblConfirmation" layoutX="157.0" layoutY="443.0" prefHeight="44.0" prefWidth="351.0" />
+
+        <!-- event-8: Button "Return Home" -->
+        <Button layoutX="520.0" layoutY="430.0" mnemonicParsing="false" onAction="#btnReturnHomeOnClick" text="Return Home" />
+    </children>
+</AnchorPane>
