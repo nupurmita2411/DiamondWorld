@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Richi.User5Dashboard">
+
+    <children>
+
+        <BorderPane prefHeight="650.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <top>
+                <VBox style="-fx-background-color: #2c3e50;">
+                    <children>
+                        <Label text="Cashier &amp; Billing Officer Dashboard" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="15.0" left="20.0" top="15.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                </VBox>
+            </top>
+         <right>
+                <GridPane hgap="20.0" vgap="20.0" BorderPane.alignment="CENTER">
+
+                    <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                    </padding>
+
+                    <children>
+                        <Button onAction="#handleGenerateCustomerBill" prefHeight="80.0" prefWidth="260.0" text="Goal 1: Generate Customer Bill" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+                        <Button onAction="#handleCustomerPayment" prefHeight="80.0" prefWidth="260.0" text="Goal 2: Process Customer Payment" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Button onAction="#handlePrintPurchaseReceipt" prefHeight="80.0" prefWidth="260.0" text="Goal 3: Print Purchase Receipt" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                        <Button onAction="#handleViewDailySalesTransactions" prefHeight="80.0" prefWidth="260.0" text="Goal 4: View Daily Sales Transactions" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+                        <Button onAction="#handleApplyCustomerDiscount" prefHeight="80.0" prefWidth="260.0" text="Goal 5: Apply Customer Discount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Button onAction="#handleSearchPurchaseHistory" prefHeight="80.0" prefWidth="260.0" text="Goal 6: Search Purchase History" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                        <Button onAction="#handleCancelIncorrectInvoice" prefHeight="80.0" prefWidth="260.0" text="Goal 7: Cancel Incorrect Invoice" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+                        <Button onAction="#handleEndOfDaySalesReport" prefHeight="80.0" prefWidth="260.0" text="Goal 8: End-of-Day Sales Report" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+
+                </GridPane>
+         </right>
+
+        </BorderPane>
+
+    </children>
+
+</AnchorPane>
