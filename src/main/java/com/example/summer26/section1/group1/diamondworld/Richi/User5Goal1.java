@@ -113,7 +113,6 @@ public class User5Goal1 {
     @FXML
     void handleReturnHome(ActionEvent event) {
         try {
-
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("User5Dashboard.fxml")));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
-            <Button fx:id="signOutTextField" layoutX="747.0" layoutY="16.0" mnemonicParsing="false" onAction="#signOutOnButtonClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Sign Out" />
+                <Button fx:id="signOutTextField" layoutX="797.0" layoutY="18.0" mnemonicParsing="false" onAction="#signOutOnButtonClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Sign Out" />
             </children>
         </AnchorPane>
 
