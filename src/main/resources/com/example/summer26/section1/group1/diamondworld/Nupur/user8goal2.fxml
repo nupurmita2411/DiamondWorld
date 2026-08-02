@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User8goal2">
+
+    <children>
+        <!-- Title Header -->
+        <Label layoutX="30.0" layoutY="20.0" text="Customer Inquiry Management">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <!-- TextFields with proper fx:id -->
+        <TextField fx:id="inquiryIdTextField" layoutX="16.0" layoutY="60.0" prefWidth="130.0" promptText="Inquiry ID" />
+        <TextField fx:id="customerNameTextField" layoutX="155.0" layoutY="60.0" prefWidth="150.0" promptText="Customer Name" />
+        <TextField fx:id="subjectTextField" layoutX="315.0" layoutY="60.0" prefWidth="160.0" promptText="Subject" />
+        <TextField fx:id="statusTextField" layoutX="485.0" layoutY="60.0" prefWidth="130.0" promptText="Status" />
+
+        <!-- Add Button -->
+        <Button layoutX="265.0" layoutY="100.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="30.0" prefWidth="120.0" text="Add Inquiry" />
+
+        <!-- TableView to show inquiries -->
+        <Label layoutX="30.0" layoutY="140.0" text="Customer Inquiries List:" />
+        <TableView fx:id="inquiriesTableView" layoutX="30.0" layoutY="165.0" prefHeight="150.0" prefWidth="590.0">
+            <columns>
+                <TableColumn fx:id="inquiryIdColumn" prefWidth="100.0" text="Inquiry ID" />
+                <TableColumn fx:id="customerNameColumn" prefWidth="180.0" text="Customer Name" />
+                <TableColumn fx:id="subjectColumn" prefWidth="190.0" text="Subject" />
+                <TableColumn fx:id="statusColumn" prefWidth="118.0" text="Status" />
+            </columns>
+        </TableView>
+
+        <!-- TextArea for Inquiry Details -->
+        <Label layoutX="30.0" layoutY="325.0" text="Inquiry Details:" />
+        <TextArea fx:id="inquiryDetailsTextArea" layoutX="30.0" layoutY="345.0" prefHeight="3.0" prefWidth="590.0" promptText="Enter inquiry details or click table row..." wrapText="true" />
+
+        <!-- TextArea for Response Message -->
+        <Label layoutX="30.0" layoutY="405.0" text="Response Message:" />
+        <TextArea fx:id="responseMessageTextArea" layoutX="30.0" layoutY="425.0" prefHeight="30.0" prefWidth="590.0" promptText="Enter response message here..." wrapText="true" />
+
+        <!-- Buttons & Notification Label -->
+        <Button fx:id="sendResponseButton" layoutX="27.0" layoutY="483.0" mnemonicParsing="false" onAction="#handleSendResponse" prefHeight="30.0" prefWidth="130.0" text="Send Response" />
+        <Button fx:id="returnHomeButton" layoutX="500.0" layoutY="483.0" mnemonicParsing="false" onAction="#handleReturnHome" prefHeight="30.0" prefWidth="120.0" text="Return Home" />
+
+        <Label fx:id="confirmationLabel" layoutX="14.0" layoutY="516.0" prefHeight="30.0" prefWidth="621.0" textFill="#008000">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
