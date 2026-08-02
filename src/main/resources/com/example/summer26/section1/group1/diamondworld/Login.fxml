@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500" prefWidth="450" style="-fx-background-color: #f0f4f8;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController">
+    <children>
+        <Label layoutX="150" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Titas Gas Login" />
+        <Label layoutX="50" layoutY="80" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="User ID:" />
+        <TextField fx:id="userIdField" layoutX="150" layoutY="75" prefWidth="250" promptText="Enter 6-8 digit User ID" style="-fx-background-radius: 6; -fx-padding: 8;" />
+        <Label layoutX="50" layoutY="130" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Password:" />
+        <PasswordField fx:id="passwordField" layoutX="150" layoutY="125" prefWidth="250" promptText="Enter password" style="-fx-background-radius: 6; -fx-padding: 8;" />
+        <Button fx:id="loginButton" layoutX="150" layoutY="180" onAction="#handleLogin" prefWidth="100" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10; -fx-font-weight: bold;" text="Login" />
+        <Button layoutX="260" layoutY="180" onAction="#forgotPasswordButton" prefWidth="140" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10; -fx-font-weight: bold;" text="Forgot Password" />
+        <Button layoutX="150" layoutY="220" onAction="#handleCreateAccount" prefWidth="250" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10; -fx-font-weight: bold;" text="Create New Account" />
+        <Label fx:id="infoLabel" layoutX="150" layoutY="270" prefWidth="250" style="-fx-text-fill: #e74c3c; -fx-font-style: italic; -fx-font-size: 12px;" text="" wrapText="true" />
+        <VBox layoutX="50" layoutY="320" spacing="5" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 8;">
+            <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Test Credentials:" />
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="Billing Officer: ID=123456, Password=Billing@123" />
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="Gas Supply Controller: ID=789012, Password=GasSupply@123" />
+        </VBox>
+    </children>
+</AnchorPane>
