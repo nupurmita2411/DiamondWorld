@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.user7goal2">
+    <children>
+
+        <!-- event-3: Add ComboBox for Source Branch. Add ComboBox for the Destination Branch. -->
+        <ComboBox fx:id="cmbSourceBranch" layoutX="85.0" layoutY="107.0" prefWidth="200.0" promptText="Source Branch" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="107.0" />
+        <ComboBox fx:id="cmbDestinationBranch" layoutX="315.0" layoutY="107.0" prefWidth="200.0" promptText="Destination Branch" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="107.0" />
+
+        <!-- event-4: Add TextField for Product ID. Add Button "Search Product". -->
+        <TextField fx:id="txtProductId" layoutX="85.0" layoutY="167.0" prefWidth="200.0" promptText="Product ID" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="167.0" />
+        <Button layoutX="315.0" layoutY="167.0" mnemonicParsing="false" onAction="#btnSearchProduct" text="Search Product" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="167.0" />
+
+        <!-- event-5: Add Label to display Current Stock. Add TextField for Transfer Quantity. -->
+        <Label layoutX="85.0" layoutY="227.0" text="Current Stock: --" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="227.0" />
+        <TextField fx:id="txtTransferQuantity" layoutX="85.0" layoutY="267.0" prefWidth="200.0" promptText="Transfer Quantity" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="267.0" />
+
+        <!-- event-7: Add Button "Transfer Stock" to complete transfer. Add Label to show transfer confirmation. -->
+        <Button layoutX="199.0" layoutY="317.0" mnemonicParsing="false" onAction="#btnTransferStock" text="Transfer Stock" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="317.0" />
+        <Label fx:id="statuslvl" layoutX="199.0" layoutY="370.0" text="Status: Ready" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="370.0" />
+
+        <!-- event-8: Clicking the "Return Home" button will send the user back to the dashboard. -->
+        <Button layoutX="425.0" layoutY="353.0" mnemonicParsing="false" onAction="#btnReturnHome" text="Return Home" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="353.0" />
+      <Label fx:id="sarchlvl" layoutX="432.0" layoutY="171.0" prefHeight="17.0" prefWidth="120.0" />
+      <Label layoutX="66.0" layoutY="33.0" text="Stock Transfer Between Branches " textFill="#2C3E50">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+
+    </children>
+</AnchorPane>

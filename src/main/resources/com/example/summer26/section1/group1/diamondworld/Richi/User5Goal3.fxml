@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Richi.User5Goal3">
+    <children>
+        <!-- Top Header Bar (Pure AnchorPane) -->
+        <AnchorPane prefHeight="60.0" style="-fx-background-color: #2c3e50;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="btnReturnHome" mnemonicParsing="false" onAction="#handleReturnHome" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Return Home" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0" />
+                <Label text="Receipt Management - Print Purchase Receipt" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="signOutTextField" layoutX="797.0" layoutY="18.0" mnemonicParsing="false" onAction="#signOutOnButtonClick" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Sign Out" />
+            </children>
+        </AnchorPane>
+
+        <!-- Search Bar Area -->
+        <AnchorPane prefHeight="65.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 5;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+            <children>
+                <Label text="Invoice Number:" textFill="#2c3e50" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtInvoiceNumber" prefHeight="35.0" prefWidth="300.0" promptText="Enter Invoice Number (e.g. INV-1001)" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="15.0" />
+                <Button fx:id="btnSearchInvoice" mnemonicParsing="false" onAction="#handleSearchInvoice" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="Search Invoice" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="15.0" />
+            </children>
+        </AnchorPane>
+
+        <!-- Receipt Preview Area -->
+        <AnchorPane style="-fx-background-color: #fafafa; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="160.0">
+            <children>
+                <Label text="Purchase Receipt Preview" textFill="#34495e" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="txtReceiptDetails" editable="false" promptText="Search an invoice number above to preview the complete purchase receipt details (customer, products, tax, discount, transaction info)..." AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0">
+                    <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                    </font>
+                </TextArea>
+            </children>
+        </AnchorPane>
+
+        <!-- Bottom Action Area (Print Button) -->
+        <Button fx:id="btnPrintReceipt" mnemonicParsing="false" onAction="#handlePrintReceipt" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="🖨 Print Receipt" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="20.0" />
+    </children>
+</AnchorPane>

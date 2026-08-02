@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User8goal1">
+
+    <children>
+        <!-- Title Header -->
+        <Label layoutX="40.0" layoutY="25.0" text="Customer Registration &amp; Profile Management">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+
+        <!-- Event 3: TextFields -->
+        <!-- Customer Name -->
+        <Label layoutX="40.0" layoutY="70.0" text="Customer Name:" />
+        <TextField fx:id="nameTextField" layoutX="170.0" layoutY="66.0" prefHeight="25.0" prefWidth="380.0" promptText="Enter full name" />
+
+        <!-- Phone Number -->
+        <Label layoutX="40.0" layoutY="110.0" text="Phone Number:" />
+        <TextField fx:id="phoneTextField" layoutX="170.0" layoutY="106.0" prefHeight="25.0" prefWidth="380.0" promptText="Enter phone number" />
+
+        <!-- Email Address -->
+        <Label layoutX="40.0" layoutY="150.0" text="Email Address:" />
+        <TextField fx:id="emailTextField" layoutX="170.0" layoutY="146.0" prefHeight="25.0" prefWidth="380.0" promptText="Enter email address" />
+
+        <!-- Address -->
+        <Label layoutX="40.0" layoutY="190.0" text="Address:" />
+        <TextField fx:id="addressTextField" layoutX="170.0" layoutY="186.0" prefHeight="25.0" prefWidth="380.0" promptText="Enter full address" />
+
+        <!-- Event 4: ComboBox for Membership Type -->
+        <Label layoutX="40.0" layoutY="230.0" text="Membership Type:" />
+        <ComboBox fx:id="membershipComboBox" layoutX="170.0" layoutY="226.0" prefHeight="25.0" prefWidth="200.0" promptText="Select Membership">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Silver" />
+                    <String fx:value="Gold" />
+                    <String fx:value="Platinum" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Event 5: TextArea for Customer Preferences and Notes -->
+        <Label layoutX="40.0" layoutY="270.0" text="Preferences &amp; Notes:" />
+        <TextArea fx:id="preferencesTextArea" layoutX="170.0" layoutY="266.0" prefHeight="39.0" prefWidth="446.0" promptText="Enter customer preferences and notes..." wrapText="true" />
+
+        <!-- Event 6: Save Profile Button -->
+        <Button fx:id="saveProfileButton" layoutX="170.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleSaveProfile" prefHeight="30.0" prefWidth="120.0" text="Save Profile" />
+
+        <!-- Event 8: Return Home Button -->
+        <Button fx:id="returnHomeButton" layoutX="300.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleReturnHome" prefHeight="30.0" prefWidth="120.0" text="Return Home" />
+
+        <!-- Event 7: Confirmation Label -->
+        <Label fx:id="confirmationLabel" layoutX="40.0" layoutY="415.0" prefHeight="30.0" prefWidth="510.0" textFill="#008000">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

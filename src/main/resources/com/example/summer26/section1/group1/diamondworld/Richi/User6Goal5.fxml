@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.CouponManagementController">
+
+    <!-- Top Section: Header Title & Return Home Button (Event-8) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 0 20;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnReturnHome" mnemonicParsing="false" onAction="#handleReturnHome" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Return Home" />
+                <Label text="Coupon Management Panel - Create &amp; Manage Coupons" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center Section: Coupon Input Form, Existing Coupons Table & Creation Confirmation -->
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            <children>
+
+                <!-- Coupon Input Form Grid (Event-3) -->
+                <GridPane hgap="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Coupon Code:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtCouponCode" promptText="e.g. SAVE20" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Discount Value:" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtDiscountValue" promptText="Amount / Percentage" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                        <Label text="Min Purchase (BDT):" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtMinPurchase" promptText="e.g. 500" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+                        <Label text="Usage Limit:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtUsageLimit" promptText="e.g. 100" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Start Date:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="dpStartDate" prefWidth="180.0" promptText="Select Start Date" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                        <Label text="Expiry Date:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="dpExpiryDate" prefWidth="180.0" promptText="Select Expiry Date" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+
+                <!-- Middle Split Area: Active Coupons Table (Left) & Confirmation Summary (Right) -->
+                <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+                    <children>
+
+                        <!-- Left Side: Table View for Existing Coupons -->
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Active Coupons List:" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="tableCoupons" prefHeight="220.0" prefWidth="550.0" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colCode" prefWidth="110.0" text="Code" />
+                                        <TableColumn fx:id="colDiscount" prefWidth="90.0" text="Discount" />
+                                        <TableColumn fx:id="colMinPurchase" prefWidth="110.0" text="Min Purchase" />
+                                        <TableColumn fx:id="colUsageLimit" prefWidth="90.0" text="Limit" />
+                                        <TableColumn fx:id="colExpiryDate" prefWidth="110.0" text="Expiry Date" />
+                                        <TableColumn fx:id="colStatus" prefWidth="90.0" text="Status" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+
+                        <!-- Right Side: Confirmation Summary Display (Event-7) -->
+                        <VBox prefWidth="320.0" spacing="8.0">
+                            <children>
+                                <Label text="Coupon Creation Confirmation:" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="txtConfirmationSummary" editable="false" prefHeight="220.0" promptText="Created coupon details (Coupon Code, Discount Amount, Validity Period, Status) will appear here after saving..." VBox.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="Monospaced Regular" size="12.0" />
+                                    </font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <!-- Bottom Action Bar (Event-6) -->
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="btnSaveCoupon" mnemonicParsing="false" onAction="#handleSaveCoupon" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Save &amp; Activate Coupon" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

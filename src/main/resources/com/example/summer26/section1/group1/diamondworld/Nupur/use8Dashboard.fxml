@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.Use8Dashboard">
+    <children>
+
+        <!-- Goal-1 Button -->
+        <Button layoutX="113.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnGoal1OnClick" prefHeight="35.0" prefWidth="350.0" text="Customer Registration &amp; Profile Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="82.0" />
+
+        <!-- Goal-2 Button -->
+        <Button layoutX="113.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnGoal2OnClick" prefHeight="35.0" prefWidth="350.0" text="Customer Inquiry Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="132.0" />
+
+        <!-- Goal-3 Button -->
+        <Button layoutX="113.0" layoutY="182.0" mnemonicParsing="false" onAction="#btnGoal3OnClick" prefHeight="35.0" prefWidth="350.0" text="Loyalty Program Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="182.0" />
+
+        <!-- Goal-4 Button -->
+        <Button layoutX="113.0" layoutY="232.0" mnemonicParsing="false" onAction="#btnGoal4OnClick" prefHeight="35.0" prefWidth="350.0" text="Customer Feedback Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="232.0" />
+
+        <!-- Goal-5 Button -->
+        <Button layoutX="113.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnGoal5OnClick" prefHeight="35.0" prefWidth="350.0" text="Promotional Campaign Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="282.0" />
+
+        <!-- Goal-6 Button -->
+        <Button layoutX="113.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnGoal6OnClick" prefHeight="35.0" prefWidth="350.0" text="Complaint Resolution Management" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="332.0" />
+
+        <!-- Goal-7 Button -->
+        <Button layoutX="113.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnGoal7OnClick" prefHeight="35.0" prefWidth="350.0" text="Customer Purchase History Tracking" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="382.0" />
+
+        <!-- Goal-8 Button -->
+        <Button layoutX="113.0" layoutY="432.0" mnemonicParsing="false" onAction="#btnGoal8OnClick" prefHeight="35.0" prefWidth="350.0" text="Customer Satisfaction Analysis" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="432.0" />
+      <Label layoutX="56.0" layoutY="23.0" text="Customer Relationship Manager Dashboard" textFill="#2C3E50">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+
+    </children>
+</AnchorPane>
