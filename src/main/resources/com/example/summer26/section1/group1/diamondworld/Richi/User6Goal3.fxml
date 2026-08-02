@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.PromotionalOutreachController">
+
+    <!-- Top Section: Title Bar & Return Home Button (Event-8) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 0 20;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnReturnHome" mnemonicParsing="false" onAction="#handleReturnHome" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="← Return Home" />
+                <Label text="Customer Outreach - Send Promotional SMS &amp; Email Offers" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Center Section: Outreach Configuration Form & Delivery Status Summary -->
+    <center>
+        <VBox spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+            <children>
+
+                <!-- Selection Controls Grid (Event-3) -->
+                <GridPane hgap="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 5;" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Customer Segment:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="cmbCustomerSegment" prefWidth="180.0" promptText="Select Segment" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Select Campaign:" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="cmbCampaign" prefWidth="180.0" promptText="Select Campaign" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                        <Label text="Delivery Channel:" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="cmbDeliveryChannel" prefWidth="180.0" promptText="SMS / Email / Both" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+                        <Label text="Sender Name:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtSenderName" promptText="Enter Sender Title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Offer Subject:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtSubject" promptText="Enter Subject / Title" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+
+                <!-- Middle Split Area: Message Composition (Left) & Delivery Status (Right) -->
+                <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+                    <children>
+
+                        <!-- Left Side: Message Composition TextArea (Event-3) -->
+                        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Compose Promotional Message:" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="txtMessageContent" prefHeight="230.0" promptText="Write your SMS or Email promotional content here..." VBox.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="System Regular" size="13.0" />
+                                    </font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+
+                        <!-- Right Side: Delivery Status Dashboard (Event-7) -->
+                        <VBox prefWidth="300.0" spacing="10.0" style="-fx-background-color: #fafafa; -fx-padding: 12; -fx-border-color: #bdc3c7; -fx-border-radius: 5;">
+                            <children>
+                                <Label text="Delivery Status Summary" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+
+                                <VBox spacing="10.0" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 5;">
+                                    <children>
+                                        <Label fx:id="lblTotalRecipients" text="Total Recipients: 0" textFill="#2c3e50">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblSuccessfulDeliveries" text="Successful Deliveries: 0" textFill="#27ae60">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblPendingDeliveries" text="Pending Deliveries: 0" textFill="#f39c12">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="lblFailedDeliveries" text="Failed Deliveries: 0" textFill="#c0392b">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+
+                                <TextArea fx:id="txtDeliveryLog" editable="false" prefHeight="130.0" promptText="Detailed delivery log will appear here after sending..." VBox.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="Monospaced Regular" size="11.0" />
+                                    </font>
+                                </TextArea>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <!-- Bottom Action Bar -->
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="btnSendOutreach" mnemonicParsing="false" onAction="#handleSendOutreach" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="🚀 Send Promotion" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
