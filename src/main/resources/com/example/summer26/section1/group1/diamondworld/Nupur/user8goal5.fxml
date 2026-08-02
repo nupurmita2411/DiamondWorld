@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="671.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User8goal5">
+
+    <children>
+        <!-- Title Header -->
+        <Label layoutX="40.0" layoutY="20.0" text="Promotional Campaign Management" textFill="#2c3e50">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <!-- event-3: TextField for Campaign Name & DatePicker for Duration -->
+        <Label layoutX="40.0" layoutY="70.0" text="Campaign Name:" />
+        <TextField fx:id="txtCampaignName" layoutX="190.0" layoutY="66.0" prefHeight="25.0" prefWidth="370.0" promptText="Enter campaign title" />
+
+        <Label layoutX="40.0" layoutY="110.0" text="Campaign End Date:" />
+        <DatePicker fx:id="dpCampaignDuration" layoutX="190.0" layoutY="106.0" prefHeight="25.0" prefWidth="370.0" promptText="Select end date" />
+
+        <!-- event-4: ComboBox for Target Customer Group -->
+        <Label layoutX="40.0" layoutY="150.0" text="Target Customer Group:" />
+        <ComboBox fx:id="cmbTargetGroup" layoutX="190.0" layoutY="146.0" prefHeight="25.0" prefWidth="370.0" promptText="Select customer group" />
+
+        <!-- event-5: TextArea for Campaign Description -->
+        <Label layoutX="40.0" layoutY="190.0" text="Campaign Description:" />
+        <TextArea fx:id="txtCampaignDescription" layoutX="190.0" layoutY="199.0" prefHeight="39.0" prefWidth="434.0" promptText="Enter detailed promotional description..." wrapText="true" />
+
+        <!-- event-6: Button "Launch Campaign" -->
+        <Button fx:id="btnLaunchCampaign" layoutX="190.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleLaunchCampaign" prefHeight="30.0" prefWidth="150.0" text="Launch Campaign" />
+
+        <!-- event-8: Button "Return Home" -->
+        <Button fx:id="btnReturnHome" layoutX="350.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleReturnHome" prefHeight="30.0" prefWidth="120.0" text="Return Home" />
+
+        <!-- event-7: Label to show campaign launch confirmation -->
+        <Label fx:id="lblConfirmationStatus" layoutX="40.0" layoutY="390.0" prefHeight="25.0" prefWidth="520.0" textFill="#008000">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+      <Pagination layoutX="-200.0" layoutY="-165.0" prefHeight="200.0" prefWidth="200.0" />
+    </children>
+</AnchorPane>
