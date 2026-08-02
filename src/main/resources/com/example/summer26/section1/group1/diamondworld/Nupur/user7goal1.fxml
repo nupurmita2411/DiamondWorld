@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #F4F6F7;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.user7goal1">
     <children>
 
-        <!-- Top Title Bar -->
+
         <Label text="Diamond World - Inventory Management" textFill="#2C3E50" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
             <font>
                 <Font name="System Bold" size="22.0" />
