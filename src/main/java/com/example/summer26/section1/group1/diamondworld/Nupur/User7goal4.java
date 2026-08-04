@@ -41,6 +41,8 @@ public class User7goal4 {
     @FXML
     private TextField txtOrderQuantity;
 
+    static ArrayList<Product> Productlist= new ArrayList<>();
+
     @FXML
     public void initialize() {
         // TableView Columns Configuration
@@ -52,33 +54,35 @@ public class User7goal4 {
         // ComboBox Items
         cmbSupplier.getItems().addAll("Supplier A", "Supplier B", "Supplier C");
 
-        // Load Products from product.bin file
-        loadProductsFromFile();
+        tblProducts.getItems().addAll(Productlist);
     }
 
     @FXML
     void btnAddToOrderOnClick(ActionEvent event) {
-        Product selected = tblProducts.getSelectionModel().getSelectedItem();
-        if (selected == null) {
-            lblOrderConfirmation.setText("Please select a product!");
+
+        Product selectedProduct = tblProducts.getSelectionModel().getSelectedItem();
+
+        String quantityText = txtOrderQuantity.getText();
+
+        if (selectedProduct == null || quantityText.isEmpty()) {
+            lblOrderConfirmation.setText("Please select product and enter quantity.");
             return;
         }
 
-        int quantity = 0;
-        try {
-            quantity = Integer.parseInt(txtOrderQuantity.getText());
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Quantity must be a whole number.");
-            alert.showAndWait();
+        int quantity = Integer.parseInt(quantityText);
+
+        if (quantity > selectedProduct.getStockQuantity()) {
+            lblOrderConfirmation.setText("Not enough stock available.");
             return;
         }
 
-        double total = selected.getPrice() * quantity;
-        lblTotalCost.setText(String.valueOf(total));
-        lblOrderConfirmation.setText("Added to order calculation!");
+        double totalCost = quantity * selectedProduct.getPrice();
 
-        txtOrderQuantity.setText("");
+        lblTotalCost.setText(String.valueOf(totalCost));
+
+        lblOrderConfirmation.setText("Product added to order.");
+
+        txtOrderQuantity.clear();
     }
 
     @FXML
@@ -103,8 +107,8 @@ public class User7goal4 {
     private void loadProductsFromFile() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("product.bin"))) {
             tblProducts.getItems().clear();
-            List<Product> tempList = (ArrayList<Product>) in.readObject();
-            tblProducts.getItems().setAll(tempList);
+            List<Product> Productlist = (ArrayList<Product>) in.readObject();
+            tblProducts.getItems().setAll(Productlist);
             lblOrderConfirmation.setText("Products loaded from file");
         } catch (IOException e) {
             lblOrderConfirmation.setText("Could not load from file");

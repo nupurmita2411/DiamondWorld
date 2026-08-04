@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class user7goal3 {
 
@@ -46,6 +47,8 @@ public class user7goal3 {
     @FXML
     private TextField txtSupplierName;
 
+    static ArrayList<supplier> supplierlist= new ArrayList<>();
+
     @FXML
     public void initialize() {
 
@@ -53,6 +56,7 @@ public class user7goal3 {
         colName.setCellValueFactory(new PropertyValueFactory<>("supplierName"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("emailAddress"));
+        tblSuppliers.getItems().addAll(supplierlist);
     }
 
     @FXML
@@ -69,16 +73,15 @@ public class user7goal3 {
 
             supplier s = new supplier(id, name, contact, email, address);
 
-
-            tblSuppliers.getItems().add(s);
-
             Status.setText("Status: Supplier added successfully!");
             clearFields();
         }
     }
 
+
+
     @FXML
-    void btnUpdateSupplier(ActionEvent event) {
+    void btnUpdateSupplier(ActionEvent actionEvent) {
         supplier selectedSupplier = tblSuppliers.getSelectionModel().getSelectedItem();
 
         if (selectedSupplier != null) {
