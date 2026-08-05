@@ -23,8 +23,11 @@ public class User8goal4 {
     @FXML private TableColumn<customerFeedback, String> colDate;
 
     @FXML private Label lblReviewStatus;
-    @FXML private TextArea txtFeedbackDetails;
     @FXML private TextArea txtManagerRemarks;
+    @FXML
+    private TableColumn<customerFeedback,String> colDetails;
+
+
 
     @FXML
     public void initialize() {
@@ -33,8 +36,9 @@ public class User8goal4 {
         colCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         colRating.setCellValueFactory(new PropertyValueFactory<>("rating"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-        tblFeedback.getItems().add(new customerFeedback("FB-101", "Rahim Ali", "5 Stars", "2026-07-20", "Very good service!"));
-        tblFeedback.getItems().add(new customerFeedback("FB-102", "Karim Shah", "4 Stars", "2026-07-22", "Great collection of diamonds."));
+        colDetails.setCellValueFactory(new PropertyValueFactory<>("Details"));
+        tblFeedback.getItems().add(new customerFeedback("FB-101", "Rahim Ali", "2026-07-20", "5 Stars", "Very good service!"));
+        tblFeedback.getItems().add(new customerFeedback("FB-102", "Karim Shah", "2026-07-22", "4 Stars", "Great collection of diamonds."));
 
 
     }
