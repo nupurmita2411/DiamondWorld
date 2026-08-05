@@ -22,15 +22,13 @@ public class User8goal3 {
 
     @FXML
     public void initialize() {
-        if (rewardComboBox != null) {
-            rewardComboBox.getItems().addAll("10% Discount Coupon", "$20 Gift Card", "Free Diamond Care Kit");
-        }
+        rewardComboBox.getItems().addAll("5% Discount", "10% Discount", "Free Gift", "Cashback");
     }
 
 
     @FXML
     void handleSearchCustomer(ActionEvent event) {
-        String searchInput = searchTextField.getText().trim();
+        String searchInput = searchTextField.getText();
 
         if ( searchInput.equalsIgnoreCase("Nupur")) {
             customerNameLabel.setText("Nupur Akter");
@@ -44,7 +42,7 @@ public class User8goal3 {
     }
     @FXML
     void handleUpdatePoints(ActionEvent event) {
-        String pointsInput = pointsToAddTextField.getText().trim();
+        String pointsInput = pointsToAddTextField.getText();
 
         if (pointsInput.isEmpty()) {
             return;
@@ -74,7 +72,7 @@ public class User8goal3 {
 
 
     @FXML
-    void handleReturnHome(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use8Dashboard.fxml", event);
+    void handleReturnHome(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml", actionEvent);
     }
 }

@@ -20,7 +20,7 @@
         <ComboBox fx:id="cmbFilter" layoutX="40.0" layoutY="70.0" prefWidth="180.0" promptText="Filter Category / Branch" />
 
         <!-- event-5: Button "Generate Alert List" -->
-        <Button layoutX="240.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnGenerateAlertListOnClick" text="Generate Alert List" />
+        <Button layoutX="240.0" layoutY="70.0" mnemonicParsing="false" onAction="#btnGenerateOA" text="Generate List" />
 
         <!-- event-3: TableView showing low stock products -->
         <TableView fx:id="tblLowStock" layoutX="40.0" layoutY="115.0" prefHeight="260.0" prefWidth="570.0">
@@ -33,7 +33,7 @@
         </TableView>
 
         <!-- event-6: Label showing total low-stock items -->
-        <Label layoutX="40.0" layoutY="390.0" prefHeight="19.0" prefWidth="180.0" text="Total Low Stock Items: 0" textFill="#e74c3c">
+        <Label layoutX="40.0" layoutY="390.0" prefHeight="19.0" prefWidth="180.0" textFill="#e74c3c">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>

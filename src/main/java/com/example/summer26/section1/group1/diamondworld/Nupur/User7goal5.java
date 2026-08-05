@@ -37,9 +37,6 @@ public class User7goal5 {
     private Label lblConfirmation;
 
     @FXML
-    private Label lblTotalLowStock;
-
-    @FXML
     private TableView<Product> tblLowStock;
 
     @FXML
@@ -48,34 +45,12 @@ public class User7goal5 {
         colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colCurrentStock.setCellValueFactory(new PropertyValueFactory<>("stockQuantity"));
-        colMinStock.setCellValueFactory(new PropertyValueFactory<>("price")); // Example mapping
+        colMinStock.setCellValueFactory(new PropertyValueFactory<>("price"));
 
 
         cmbFilter.getItems().addAll("All Categories", "Ring", "Necklace", "Dhaka Branch", "Chattogram Branch");
     }
 
-    @FXML
-    void btnGenerateAlertListOnClick(ActionEvent event) {
-        tblLowStock.getItems().clear();
-
-        // Load Products from File and filter low stock (e.g., quantity < 5)
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("product.bin"))) {
-            List<Product> allProducts = (ArrayList<Product>) in.readObject();
-            int count = 0;
-
-            for (Product p : allProducts) {
-                if (p.getStockQuantity() < 5) { // Threshold for low stock
-                    tblLowStock.getItems().add(p);
-                    count++;
-                }
-            }
-
-            lblTotalLowStock.setText("Total Low Stock Items: " + count);
-            lblConfirmation.setText("Alert list generated successfully!");
-        } catch (IOException | ClassNotFoundException e) {
-            lblConfirmation.setText("Could not load products from file");
-        }
-    }
 
     @FXML
     void btnRequestRestockOnClick(ActionEvent event) {
@@ -87,7 +62,13 @@ public class User7goal5 {
     }
 
     @FXML
-    void btnReturnHomeOnClick(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use7Dashboard.fxml", event);
+    void btnReturnHomeOnClick(ActionEvent ActionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User7Dashboard.fxml", ActionEvent);
+    }
+
+    @FXML
+    public void btnGenerateOA(ActionEvent actionEvent) {
+        String selected = cmbFilter.getValue();
+        System.out.println("Generating report for: " + selected);
     }
 }

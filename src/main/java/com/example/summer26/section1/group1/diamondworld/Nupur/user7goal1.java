@@ -40,6 +40,6 @@ public class user7goal1 {
 
     @FXML
     public void btnReturnHome(ActionEvent actionEvent) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use7Dashboard.fxml", actionEvent);
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User7Dashboard.fxml", actionEvent);
     }
 }

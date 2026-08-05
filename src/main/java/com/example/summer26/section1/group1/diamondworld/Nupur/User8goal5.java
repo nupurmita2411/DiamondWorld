@@ -14,10 +14,7 @@ public class User8goal5 {
     @FXML private ComboBox<String> cmbTargetGroup;
     @FXML private TextArea txtCampaignDescription;
     @FXML private Label lblConfirmationStatus;
-    @FXML
-    private Button btnReturnHome;
-    @FXML
-    private Button btnLaunchCampaign;
+
 
     @FXML
     public void initialize() {
@@ -34,19 +31,15 @@ public class User8goal5 {
             lblConfirmationStatus.setText("Please fill in all required fields!");
         } else {
             lblConfirmationStatus.setText("Campaign '" + name + "' launched successfully for " + group + " customers!");
-            clearFields();
+            txtCampaignName.clear();
+            dpCampaignDuration.setValue(null);
+            cmbTargetGroup.setValue(null);
+            txtCampaignDescription.clear();
         }
     }
 
     @FXML
-    void handleReturnHome(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use8Dashboard.fxml", event);
-    }
-
-    private void clearFields() {
-        txtCampaignName.clear();
-        dpCampaignDuration.setValue(null);
-        cmbTargetGroup.setValue(null);
-        txtCampaignDescription.clear();
+    void handleReturnHome(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml", actionEvent);
     }
 }

@@ -73,8 +73,13 @@ public class user7goal3 {
 
             supplier s = new supplier(id, name, contact, email, address);
 
+
             Status.setText("Status: Supplier added successfully!");
-            clearFields();
+            txtSupplierId.clear();
+        txtSupplierName.clear();
+        txtContactNumber.clear();
+        txtEmailAddress.clear();
+        txtSupplierAddress.clear();
         }
     }
 
@@ -92,7 +97,7 @@ public class user7goal3 {
 
             tblSuppliers.refresh();
             Status.setText("Status: Supplier updated successfully!");
-            clearFields();
+
         } else if (!txtSupplierId.getText().isEmpty()) {
             Status.setText("Status: Select a row from table to update!");
         } else {
@@ -107,22 +112,16 @@ public class user7goal3 {
         if (selectedSupplier != null) {
             tblSuppliers.getItems().remove(selectedSupplier);
             Status.setText("Status: Supplier deleted successfully!");
-            clearFields();
+
         } else {
             Status.setText("Status: Select a supplier from table to delete!");
         }
     }
 
     @FXML
-    void btnReturnHome(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use7Dashboard.fxml", event);
+    void btnReturnHome(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User7Dashboard.fxml",actionEvent);
     }
 
-    private void clearFields() {
-        txtSupplierId.setText("");
-        txtSupplierName.setText("");
-        txtContactNumber.setText("");
-        txtEmailAddress.setText("");
-        txtSupplierAddress.setText("");
-    }
+
 }

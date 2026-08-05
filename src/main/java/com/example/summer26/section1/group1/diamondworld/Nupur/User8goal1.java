@@ -4,13 +4,15 @@ package com.example.summer26.section1.group1.diamondworld.Nupur;
 import com.example.summer26.section1.group1.diamondworld.ScenceSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class User8goal1 {
 
@@ -34,10 +36,6 @@ public class User8goal1 {
 
     @FXML
     private TextArea preferencesTextArea;
-    @FXML
-    private Button saveProfileButton;
-    @FXML
-    private Button returnHomeButton;
 
 
     @FXML
@@ -48,33 +46,17 @@ public class User8goal1 {
 
     @FXML
     void handleSaveProfile(ActionEvent event) {
-        String name = nameTextField.getText();
-        String phone = phoneTextField.getText();
-        String email = emailTextField.getText();
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("feedback.bin"))) {
 
-        if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
-            confirmationLabel.setText("Please fill all required fields!");
-        } else if (membershipComboBox.getValue() == null) {
-            confirmationLabel.setText("Please select a Membership Type!");
-        } else {
-            confirmationLabel.setText("Profile saved successfully!");
-
-
-            clearFields();
+            confirmationLabel.setText("Objects have been written to file successfully!");
+        } catch (IOException e) {
+            confirmationLabel.setText("Could not save to file!");
         }
     }
 
     @FXML
-    void handleReturnHome(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use8Dashboard.fxml", event);
+    void handleReturnHome(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml", actionEvent);
     }
 
-    private void clearFields() {
-        nameTextField.setText("");
-        phoneTextField.setText("");
-        emailTextField.setText("");
-        addressTextField.setText("");
-        preferencesTextArea.setText("");
-        membershipComboBox.setValue(null);
-    }
 }

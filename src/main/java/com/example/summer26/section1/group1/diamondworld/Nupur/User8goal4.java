@@ -14,8 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class User8goal4 {
 
-    @FXML private Button btnMarkAsReviewed;
-    @FXML private Button btnReturnHome;
+
 
     @FXML private TableView<customerFeedback> tblFeedback;
     @FXML private TableColumn<customerFeedback, String> colFeedbackId;
@@ -38,11 +37,6 @@ public class User8goal4 {
         tblFeedback.getItems().add(new customerFeedback("FB-102", "Karim Shah", "4 Stars", "2026-07-22", "Great collection of diamonds."));
 
 
-        tblFeedback.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                txtFeedbackDetails.setText(newVal.getDetails());
-            }
-        });
     }
 
 
@@ -60,7 +54,7 @@ public class User8goal4 {
 
 
     @FXML
-    void handleReturnHome(ActionEvent event) throws Exception {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use8Dashboard.fxml", event);
+    void handleReturnHome(ActionEvent actionEvent) throws Exception {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml", actionEvent);
     }
 }

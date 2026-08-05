@@ -15,9 +15,6 @@ import java.util.List;
 public class User7goal4 {
 
     @FXML
-    private ComboBox<String> cmbSupplier;
-
-    @FXML
     private TableColumn<Product, Double> colCost;
 
     @FXML
@@ -33,15 +30,17 @@ public class User7goal4 {
     private Label lblOrderConfirmation;
 
     @FXML
-    private Label lblTotalCost;
-
-    @FXML
     private TableView<Product> tblProducts;
 
-    @FXML
-    private TextField txtOrderQuantity;
-
     static ArrayList<Product> Productlist= new ArrayList<>();
+    @FXML
+    private TextField productnameTF;
+    @FXML
+    private TextField wuantitytF;
+    @FXML
+    private TextField roductidTF;
+    @FXML
+    private TextField costtf;
 
     @FXML
     public void initialize() {
@@ -51,8 +50,6 @@ public class User7goal4 {
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("stockQuantity"));
         colCost.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        // ComboBox Items
-        cmbSupplier.getItems().addAll("Supplier A", "Supplier B", "Supplier C");
 
         tblProducts.getItems().addAll(Productlist);
     }
@@ -60,60 +57,81 @@ public class User7goal4 {
     @FXML
     void btnAddToOrderOnClick(ActionEvent event) {
 
-        Product selectedProduct = tblProducts.getSelectionModel().getSelectedItem();
+            String id = roductidTF.getText();
+            String name = productnameTF.getText();
+            String quantityText = wuantitytF.getText();
+            String priceText = costtf.getText();
 
-        String quantityText = txtOrderQuantity.getText();
+            if (id.isEmpty() || name.isEmpty() || quantityText.isEmpty() || priceText.isEmpty()) {
 
-        if (selectedProduct == null || quantityText.isEmpty()) {
-            lblOrderConfirmation.setText("Please select product and enter quantity.");
-            return;
+                lblOrderConfirmation.setText("Please fill all fields.");
+
+            } else {
+
+                int quantity = Integer.parseInt(quantityText);
+                double price = Double.parseDouble(priceText);
+
+                Product p = new Product(id, name, quantity, price);
+
+                Productlist.add(p);
+
+
+
+                lblOrderConfirmation.setText("Product added successfully!");
+
+                roductidTF.clear();
+                productnameTF.clear();
+                wuantitytF.clear();
+                costtf.clear();
+            }
         }
 
-        int quantity = Integer.parseInt(quantityText);
-
-        if (quantity > selectedProduct.getStockQuantity()) {
-            lblOrderConfirmation.setText("Not enough stock available.");
-            return;
-        }
-
-        double totalCost = quantity * selectedProduct.getPrice();
-
-        lblTotalCost.setText(String.valueOf(totalCost));
-
-        lblOrderConfirmation.setText("Product added to order.");
-
-        txtOrderQuantity.clear();
-    }
 
     @FXML
-    void btnSubmitOrderOnClick(ActionEvent event) {
-        if (cmbSupplier.getValue() == null) {
-            lblOrderConfirmation.setText("Please select a supplier!");
-        } else if (lblTotalCost.getText().isEmpty() || lblTotalCost.getText().equals("0.0")) {
-            lblOrderConfirmation.setText("Please calculate total cost first!");
+    void btnReturnHomeOnClick(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User7Dashboard.fxml", actionEvent);
+    }
+
+
+    @FXML
+    public void delete(ActionEvent actionEvent) {
+        Product selected = tblProducts.getSelectionModel().getSelectedItem();
+
+        if (selected != null) {
+
+            Productlist.remove(selected);
+            tblProducts.getItems().remove(selected);
+
+            lblOrderConfirmation.setText("Record deleted.");
+
         } else {
-            lblOrderConfirmation.setText("Order submitted successfully!");
-            lblTotalCost.setText("0.0");
-            cmbSupplier.setValue(null);
+
+            lblOrderConfirmation.setText("Please select a row to delete.");  }
+    }
+
+    @FXML
+    public void filteringOA(ActionEvent actionEvent) {
+
+        if (costtf.getText().isEmpty()) {
+            lblOrderConfirmation.setText("Enter a price.");
+            return;
         }
-    }
 
-    @FXML
-    void btnReturnHomeOnClick(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use7Dashboard.fxml", event);
-    }
+        double price = Double.parseDouble(costtf.getText());
 
-    @FXML
-    private void loadProductsFromFile() {
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("product.bin"))) {
-            tblProducts.getItems().clear();
-            List<Product> Productlist = (ArrayList<Product>) in.readObject();
-            tblProducts.getItems().setAll(Productlist);
-            lblOrderConfirmation.setText("Products loaded from file");
-        } catch (IOException e) {
-            lblOrderConfirmation.setText("Could not load from file");
-        } catch (ClassNotFoundException e) {
-            lblOrderConfirmation.setText("Invalid data in file");
+        tblProducts.getItems().clear();
+
+        for (Product p : Productlist) {
+            if (p.getPrice() == price) {
+                tblProducts.getItems().add(p);
+            }
+        }
+
+        if (tblProducts.getItems().isEmpty()) {
+            lblOrderConfirmation.setText("No product found.");
+        } else {
+            lblOrderConfirmation.setText("Product found.");
         }
     }
 }
+

@@ -3,7 +3,6 @@ package com.example.summer26.section1.group1.diamondworld.Nupur;
 import com.example.summer26.section1.group1.diamondworld.ScenceSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -12,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class User8goal2 {
 
@@ -24,14 +24,14 @@ public class User8goal2 {
     @FXML private TextArea inquiryDetailsTextArea;
     @FXML private TextArea responseMessageTextArea;
 
-    @FXML private Button returnHomeButton;
-    @FXML private Button sendResponseButton;
     @FXML private Label confirmationLabel;
 
     @FXML private TextField inquiryIdTextField;
     @FXML private TextField customerNameTextField;
     @FXML private TextField subjectTextField;
     @FXML private TextField statusTextField;
+    static ArrayList<customerInquiry> customerInquiryArrayList= new ArrayList<>();
+
 
     @FXML
     public void initialize() {
@@ -40,97 +40,62 @@ public class User8goal2 {
         subjectColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
+        inquiriesTableView.getItems().addAll(customerInquiryArrayList);
 
-        inquiriesTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal != null) {
-                inquiryDetailsTextArea.setText(newVal.getDetails());
-            }
-        });
+
     }
 
 
     @FXML
     void addButtonOnAction(ActionEvent event) {
-        String id = (inquiryIdTextField != null) ? inquiryIdTextField.getText().trim() : "";
-        String name = (customerNameTextField != null) ? customerNameTextField.getText().trim() : "";
-        String subject = (subjectTextField != null) ? subjectTextField.getText().trim() : "";
-        String status = (statusTextField != null) ? statusTextField.getText().trim() : "";
-        String details = (inquiryDetailsTextArea != null) ? inquiryDetailsTextArea.getText().trim() : "";
 
-        if (status.isEmpty()) {
-            status = "Pending";
+        String id = inquiryIdTextField.getText();
+        String name = customerNameTextField.getText();
+        String subject = subjectTextField.getText();
+        String status = statusTextField.getText();
+        String details = inquiryDetailsTextArea.getText();
+
+        if (id.isEmpty() || name.isEmpty()) {
+            confirmationLabel.setText("Status: Please enter Supplier ID and Name!");
+        } else {
+
+            customerInquiry c = new customerInquiry(id, name, subject, status, details);
+            customerInquiryArrayList.add(c);
+
+             inquiriesTableView.getItems().add(c);
+            confirmationLabel.setText("Status: Supplier added successfully!");
+            inquiryIdTextField.clear();
+            customerNameTextField.clear();
+            subjectTextField.clear();
+            statusTextField.clear();
+            inquiryDetailsTextArea.clear();
         }
-
-
-        if (name.isEmpty() || subject.isEmpty()) {
-            if (confirmationLabel != null) {
-                confirmationLabel.setText("Notification: Customer Name and Subject are required!");
-            }
-            return;
-        }
-
-
-        customerInquiry newInquiry = new customerInquiry(id, name, subject, status, details);
-        inquiriesTableView.getItems().add(newInquiry);
-
-        if (confirmationLabel != null) {
-            confirmationLabel.setText("Notification: Inquiry added successfully!");
-        }
-
-
-        if (inquiryIdTextField != null) inquiryIdTextField.clear();
-        if (customerNameTextField != null) customerNameTextField.clear();
-        if (subjectTextField != null) subjectTextField.clear();
-        if (statusTextField != null) statusTextField.clear();
-        inquiryDetailsTextArea.clear();
     }
 
 
     @FXML
     void handleSendResponse(ActionEvent event) {
-        customerInquiry selectedInquiry = inquiriesTableView.getSelectionModel().getSelectedItem();
-        String details = inquiryDetailsTextArea.getText().trim();
-        String response = responseMessageTextArea.getText().trim();
 
-        if (selectedInquiry == null) {
-            if (confirmationLabel != null) {
-                confirmationLabel.setText("Notification: Please select an inquiry from the table first!");
-            }
+        customerInquiry selected = inquiriesTableView.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            confirmationLabel.setText("Please select an inquiry.");
             return;
         }
 
-
-        if (details.isEmpty()) {
-            if (confirmationLabel != null) {
-                confirmationLabel.setText("Notification: Inquiry details cannot be empty!");
-            }
+        if (responseMessageTextArea.getText().isEmpty()) {
+            confirmationLabel.setText("Please write a response.");
             return;
         }
 
-
-        if (response.isEmpty()) {
-            if (confirmationLabel != null) {
-                confirmationLabel.setText("Notification: Response message cannot be empty!");
-            }
-            return;
-        }
-
-
-        selectedInquiry.setStatus("Responded");
-        inquiriesTableView.refresh();
-
-        if (confirmationLabel != null) {
-            confirmationLabel.setText("Notification: Response sent successfully!");
-        }
-
+        confirmationLabel.setText("Response sent successfully!");
 
         responseMessageTextArea.clear();
         inquiryDetailsTextArea.clear();
     }
 
-
     @FXML
-    void handleReturnHome(ActionEvent event) throws IOException {
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/Use8Dashboard.fxml", event);
+    void handleReturnHome(ActionEvent actionEvent) throws IOException {
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml", actionEvent);
     }
 }
