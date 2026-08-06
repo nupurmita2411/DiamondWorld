@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.sales.CustomerProfileController" spacing="10">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.CustomerProfileController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
     <HBox spacing="8">
         <Button text="Back" onAction="#onBack"/>

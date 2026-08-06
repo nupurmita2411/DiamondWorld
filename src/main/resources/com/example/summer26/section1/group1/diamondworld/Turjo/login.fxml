@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.diamondworld.controller.LoginController"
+      fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController"
       alignment="CENTER" spacing="16">
     <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
 

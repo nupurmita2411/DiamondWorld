@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.BranchManagerDashboardController"
+      fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.BranchManagerDashboardController"
       spacing="12">
     <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
 
