@@ -1,0 +1,18 @@
+[
+  {
+    "employeeId": "2310973",
+    "employeeName": "Nabila Bashar",
+    "previousSales": 420000.0,
+    "targetAmount": 850000.0,
+    "month": 6,
+    "year": 2026
+  },
+  {
+    "employeeId": "2111520",
+    "employeeName": "Mithila Farzana Richi",
+    "previousSales": 380000.0,
+    "targetAmount": 750000.0,
+    "month": 6,
+    "year": 2026
+  }
+]

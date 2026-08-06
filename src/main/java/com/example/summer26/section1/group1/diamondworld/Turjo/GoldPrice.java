@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo.model;
+package com.example.summer26.section1.group1.diamondworld.Turjo;
 
 public class GoldPrice {
     private double k22;
@@ -41,4 +41,7 @@ public class GoldPrice {
         this.lastUpdated = lastUpdated;
     }
 }
+
+
+
 

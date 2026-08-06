@@ -1,10 +1,6 @@
-package com.diamondworld.controller;
+package com.example.summer26.section1.group1.diamondworld;
 
-import com.example.summer26.section1.group1.diamondworld.Turjo.Navigation;
-import com.example.summer26.section1.group1.diamondworld.Turjo.Session;
-import com.example.summer26.section1.group1.diamondworld.Turjo.model.Employee;
-import com.example.summer26.section1.group1.diamondworld.Turjo.model.UserRole;
-import com.example.summer26.section1.group1.diamondworld.Turjo.service.AuthService;
+import com.example.summer26.section1.group1.diamondworld.Turjo.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "P001",
+    "barcode": "DW-RING-001",
+    "name": "Solitaire Ring 1 Carat",
+    "category": "Diamond Ring",
+    "weightGrams": 4.2,
+    "clarity": "VVS1",
+    "price": 185000.0,
+    "branch": "Gulshan",
+    "displayLocation": "Case A-12",
+    "stock": 3,
+    "status": "Available",
+    "certificateLink": "CERT-001"
+  },
+  {
+    "id": "P002",
+    "barcode": "DW-NECK-002",
+    "name": "Diamond Necklace Classic",
+    "category": "Diamond Necklace",
+    "weightGrams": 12.5,
+    "clarity": "VS1",
+    "price": 320000.0,
+    "branch": "Banani",
+    "displayLocation": "Case B-03",
+    "stock": 2,
+    "status": "Available",
+    "certificateLink": "CERT-002"
+  },
+  {
+    "id": "P003",
+    "barcode": "DW-BANG-003",
+    "name": "Diamond Bangles Set",
+    "category": "Bangles",
+    "weightGrams": 28.0,
+    "clarity": "VS2",
+    "price": 450000.0,
+    "branch": "Gulshan",
+    "displayLocation": "Display Box C",
+    "stock": 5,
+    "status": "Available",
+    "certificateLink": "CERT-003"
+  },
+  {
+    "id": "P004",
+    "barcode": "DW-GOLD-004",
+    "name": "22K Gold Chain",
+    "category": "Gold",
+    "weightGrams": 15.0,
+    "clarity": "N/A",
+    "price": 95000.0,
+    "branch": "Dhanmondi",
+    "displayLocation": "Case C-07",
+    "stock": 8,
+    "status": "Available",
+    "certificateLink": "N/A"
+  }
+]

@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo.model;
+package com.example.summer26.section1.group1.diamondworld.Turjo;
 
 public class Product {
     private String id;
@@ -113,4 +113,7 @@ public class Product {
         this.certificateLink = certificateLink;
     }
 }
+
+
+
 

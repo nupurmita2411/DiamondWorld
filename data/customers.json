@@ -1,0 +1,18 @@
+[
+  {
+    "id": "C001",
+    "name": "Karim Ahmed",
+    "phone": "01712345678",
+    "email": "karim@email.com",
+    "nid": "1990123456789",
+    "loyaltyPoints": 1200
+  },
+  {
+    "id": "C002",
+    "name": "Sadia Rahman",
+    "phone": "01898765432",
+    "email": "sadia@email.com",
+    "nid": "1998765432109",
+    "loyaltyPoints": 850
+  }
+]

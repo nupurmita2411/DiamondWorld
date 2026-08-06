@@ -1,0 +1,10 @@
+[
+  {
+    "id": "EXP-001",
+    "vendor": "Dhaka Power Distribution",
+    "amount": 28500.0,
+    "type": "Utility",
+    "serviceTerms": "Monthly electricity - SLA-2024",
+    "status": "Pending"
+  }
+]
