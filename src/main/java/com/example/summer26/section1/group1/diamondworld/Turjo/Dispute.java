@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class Dispute {
     private String id;
@@ -77,3 +77,4 @@ public class Dispute {
         this.resolution = resolution;
     }
 }
+

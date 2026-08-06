@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class Reservation {
     private String id;
@@ -59,3 +59,4 @@ public class Reservation {
         this.status = status;
     }
 }
+

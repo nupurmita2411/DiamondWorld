@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class MonthlySalesReport {
     private int month;
@@ -59,3 +59,4 @@ public class MonthlySalesReport {
         this.registerTotal = registerTotal;
     }
 }
+

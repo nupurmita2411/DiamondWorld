@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class StockReplenishmentRequest {
     private String id;
@@ -73,3 +73,4 @@ public class StockReplenishmentRequest {
         return id + " - " + itemType + " (stock: " + currentStock + ")";
     }
 }
+

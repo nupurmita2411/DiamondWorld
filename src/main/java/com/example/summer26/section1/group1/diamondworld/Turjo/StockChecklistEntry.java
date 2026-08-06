@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class StockChecklistEntry {
     private String caseName;
@@ -68,3 +68,4 @@ public class StockChecklistEntry {
         this.date = date;
     }
 }
+

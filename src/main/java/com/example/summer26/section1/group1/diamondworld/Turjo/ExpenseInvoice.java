@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class ExpenseInvoice {
     private String id;
@@ -64,3 +64,4 @@ public class ExpenseInvoice {
         return id + " - " + vendor + " (BDT " + amount + ")";
     }
 }
+

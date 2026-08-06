@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class RepairJob {
     private String jobCardNo;
@@ -50,3 +50,4 @@ public class RepairJob {
         this.lastUpdated = lastUpdated;
     }
 }
+

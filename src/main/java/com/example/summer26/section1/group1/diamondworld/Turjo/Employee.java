@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class Employee {
     private String id;
@@ -48,3 +48,4 @@ public class Employee {
         this.password = password;
     }
 }
+

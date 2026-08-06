@@ -1,4 +1,4 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld.Turjo.model;
 
 public class VaultItem {
     private String rfidTag;
@@ -32,3 +32,4 @@ public class VaultItem {
         this.inVault = inVault;
     }
 }
+
