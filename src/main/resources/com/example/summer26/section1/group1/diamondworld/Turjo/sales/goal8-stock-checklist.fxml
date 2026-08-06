@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.sales.StockChecklistController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 8: Record Daily Physical Counter Stock Checklist" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <GridPane hgap="8" vgap="8">
+            <Label text="Display Case Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="caseNameField" promptText="Diamond Bangles Display Box C" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Physical Observed Count:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="physicalCountField" promptText="8" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+        <Button text="Submit &amp; Verify Closure Balance" onAction="#onSubmit"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

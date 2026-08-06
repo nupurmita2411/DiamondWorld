@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.manager.CustomDesignApprovalController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Button text="Sign Out" onAction="#onSignOut"/>
+        <Label text="Goal 1: Approve Custom Design Requests" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <Button text="Open Pending Approval Module" onAction="#onLoadModule"/>
+        <HBox spacing="8">
+            <Label text="Request:"/>
+            <ComboBox fx:id="requestCombo" prefWidth="300"/>
+            <Button text="Load Details" onAction="#onLoadDetails"/>
+        </HBox>
+        <Label text="Markup Factor:"/>
+        <TextField fx:id="markupField" promptText="e.g. 1.25"/>
+        <Button text="Approve Request" onAction="#onApprove"/>
+        <TableView fx:id="detailsTable" prefHeight="150">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="customerCol" text="Customer" prefWidth="120"/>
+                <TableColumn fx:id="metalCol" text="Metal" prefWidth="120"/>
+                <TableColumn fx:id="quoteCol" text="Quote (BDT)" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" maxWidth="Infinity"/>
+</VBox>
+

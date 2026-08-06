@@ -66,7 +66,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.summer26.section1.group1.diamondworld/com.example.summer26.section1.group1.diamondworld.Turjo.DiamondWorldApp
+                                com.example.summer26.section1.group1.diamondworld/com.example.summer26.section1.group1.diamondworld.DiamondWorldApp
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

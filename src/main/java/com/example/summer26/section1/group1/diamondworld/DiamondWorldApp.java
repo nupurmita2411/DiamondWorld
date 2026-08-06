@@ -1,5 +1,7 @@
-package com.example.summer26.section1.group1.diamondworld.Turjo;
+package com.example.summer26.section1.group1.diamondworld;
 
+import com.example.summer26.section1.group1.diamondworld.Turjo.DataStore;
+import com.example.summer26.section1.group1.diamondworld.Turjo.Navigation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

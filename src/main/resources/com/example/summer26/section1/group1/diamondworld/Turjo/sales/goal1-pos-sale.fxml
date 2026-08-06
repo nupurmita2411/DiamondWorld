@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.sales.PosSaleController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Button text="Sign Out" onAction="#onSignOut"/>
+        <Label text="Goal 1: Process Retail Sale &amp; Payment" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <HBox spacing="8">
+            <Label text="Barcode:"/>
+            <TextField fx:id="barcodeField" promptText="DW-RING-001"/>
+            <Button text="Scan Item" onAction="#onScan"/>
+        </HBox>
+        <HBox spacing="8">
+            <Label text="Customer Mobile:"/>
+            <TextField fx:id="phoneField" promptText="01712345678"/>
+            <Label text="Payment Mode:"/>
+            <ComboBox fx:id="paymentCombo" prefWidth="130"/>
+        </HBox>
+        <Button text="Complete Sale &amp; Print Receipt" onAction="#onCheckout"/>
+        <TextArea fx:id="receiptArea" prefRowCount="8" editable="false"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

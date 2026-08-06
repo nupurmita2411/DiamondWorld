@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.manager.SalesTargetController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 5: Assign Monthly Sales Targets" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <TableView fx:id="targetTable" prefHeight="180">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="prevCol" text="Prev Sales" prefWidth="100"/>
+                <TableColumn fx:id="targetCol" text="Target Goal" prefWidth="120"/>
+            </columns>
+        </TableView>
+        <Button text="Save &amp; Assign Targets" onAction="#onSave"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

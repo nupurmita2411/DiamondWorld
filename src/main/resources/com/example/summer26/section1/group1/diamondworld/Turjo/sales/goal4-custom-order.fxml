@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.controller.sales.CustomOrderController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 4: Initiate Custom Design Order" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <GridPane hgap="8" vgap="8">
+            <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="customerField" promptText="Sadia Rahman" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Metal Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="metalCombo" prefWidth="180" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Ring Size (3-15):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="ringSizeField" promptText="7.5" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Diamond Cut:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <ComboBox fx:id="cutCombo" prefWidth="180" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Label text="Advance Deposit (BDT):" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="depositField" promptText="30000" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        </GridPane>
+        <HBox spacing="8">
+            <Button text="Calculate Min Deposit" onAction="#onCalculateDeposit"/>
+            <Button text="Submit Order &amp; Issue Ticket" onAction="#onSubmit"/>
+        </HBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+
