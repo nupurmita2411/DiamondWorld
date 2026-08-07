@@ -1,6 +1,8 @@
 package com.example.summer26.section1.group1.diamondworld.Nupur;
 
-public class customerFeedback {
+import java.io.Serializable;
+
+public class customerFeedback  {
     private String feedbackId;
     private String customerName;
     private String rating;

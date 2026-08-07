@@ -2,9 +2,9 @@ package com.example.summer26.section1.group1.diamondworld.Nupur;
 
 import java.io.Serializable;
 
-public class customerInquiry implements Serializable {
+public class customerInquiry  {
 
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 
     private String inquiryId;
     private String customerName;

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User8goal1">
+<AnchorPane fx:id="mainPane" prefHeight="500.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.User8goal1">
 
     <children>
         <!-- Title Header -->
@@ -57,7 +57,7 @@
         <Button fx:id="saveProfileButton" layoutX="170.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleSaveProfile" prefHeight="30.0" prefWidth="120.0" text="Save Profile" />
 
         <!-- Event 8: Return Home Button -->
-        <Button fx:id="returnHomeButton" layoutX="300.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleReturnHome" prefHeight="30.0" prefWidth="120.0" text="Return Home" />
+        <Button fx:id="returnHomeButton" layoutX="482.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleReturnHome" prefHeight="30.0" prefWidth="120.0" text="Return Home" />
 
         <!-- Event 7: Confirmation Label -->
         <Label fx:id="confirmationLabel" layoutX="40.0" layoutY="415.0" prefHeight="30.0" prefWidth="510.0" textFill="#008000">
@@ -65,5 +65,6 @@
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
+      <Button layoutX="482.0" layoutY="456.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="30.0" prefWidth="120.0" text="Next page" />
     </children>
 </AnchorPane>
