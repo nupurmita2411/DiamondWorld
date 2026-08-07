@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.ShowcustomerdetailsViewController">
+
+    <children>
+
+        <Label layoutX="72.0" layoutY="29.0" text="Customer Details Management" textFill="#2C3E50">
+
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+
+        </Label>
+
+
+        <TableView fx:id="customerTV" layoutY="89.0" prefHeight="260.0" prefWidth="629.0" style="-fx-border-color: #9a65f0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+
+            <columns>
+
+                <TableColumn fx:id="nameTC" prefWidth="100.0" text="Name" />
+
+                <TableColumn fx:id="phoneTC" prefWidth="100.0" text="Phone" />
+
+                <TableColumn fx:id="emailTC" prefWidth="120.0" text="Email" />
+
+                <TableColumn fx:id="addressTC" prefWidth="100.0" text="Address" />
+
+                <TableColumn fx:id="membershipTC" prefWidth="80.0" text="Membership" />
+
+                <TableColumn fx:id="preferencesTC" prefWidth="127.00003051757812" text="Preferences" />
+
+            </columns>
+
+        </TableView>
+
+
+        <Button layoutX="150.0" layoutY="390.0" mnemonicParsing="false" onAction="#loadButtonOA" prefWidth="130.0" text="Load Customer" />
+
+
+        <Button layoutX="330.0" layoutY="390.0" mnemonicParsing="false" onAction="#previousButtonOA" prefWidth="130.0" text="Previous" />
+
+
+        <Label fx:id="messageLabel" layoutX="54.0" layoutY="450.0" prefHeight="30.0" prefWidth="400.0" />
+
+
+    </children>
+
+</AnchorPane>
