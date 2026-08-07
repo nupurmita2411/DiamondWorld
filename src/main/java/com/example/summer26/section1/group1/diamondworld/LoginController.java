@@ -47,7 +47,18 @@ public class LoginController {
                 Navigation.loadScene(
                         "/com/example/summer26/section1/group1/diamondworld/turjo/sales-executive-dashboard.fxml",
                         "Diamond World - Sales Executive Dashboard");
+
+        } else if (employee.get().getRole() == UserRole.INVENTORY_MANAGER) {
+            Navigation.loadScene(
+                    "/com/example/summer26/section1/group1/diamondworld/Nupur/Use7Dashboard.fxml",
+                    "Diamond World - Inventory Manager Dashboard");
+
+        } else if (employee.get().getRole() == UserRole.CUSTOMER_RELATIONSHIP_MANAGER) {
+                Navigation.loadScene(
+                        "/com/example/summer26/section1/group1/diamondworld/Nupur/User8Dashboard.fxml",
+                        "Diamond World - Customer Relationship Manager Dashboard");
             }
+
         } catch (Exception e) {
             errorLabel.setText("Failed to load dashboard: " + e.getMessage());
         }

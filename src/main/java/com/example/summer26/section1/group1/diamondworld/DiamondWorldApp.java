@@ -18,7 +18,7 @@ public class DiamondWorldApp extends Application {
 
         FXMLLoader loader = new FXMLLoader(
                 DiamondWorldApp.class.getResource("/com/example/summer26/section1/group1/diamondworld/Login.fxml"));
-        Scene scene = new Scene(loader.load(), 960, 640);
+        Scene scene = new Scene(loader.load());
 
         stage.setTitle("Diamond World - Jewellery Shop Management System");
         stage.setScene(scene);
