@@ -10,7 +10,7 @@ public class Use7Dashboard {
 
     @FXML
     public void initialize() {
-        // Initialize logic (if any)
+
     }
 
     @FXML
