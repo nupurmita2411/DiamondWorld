@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.CustomerProfileController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 3: Create Loyalty Customer Profile" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <GridPane hgap="8" vgap="8">
+            <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="nameField" promptText="Karim Ahmed" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Mobile Phone:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="phoneField" promptText="01712345678" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Email Address:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="emailField" promptText="karim@email.com" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Government NID:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="nidField" promptText="1990123456789" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        </GridPane>
+        <Button text="Register &amp; Activate Loyalty" onAction="#onRegister"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

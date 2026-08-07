@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.ReservationController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 6: Reserve Jewellery Items for VIP Clients" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <GridPane hgap="8" vgap="8">
+            <Label text="Item Tag / Barcode:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="itemTagField" promptText="DW-RING-001" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="VIP Customer ID:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="customerIdField" promptText="C001" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+        <Button text="Confirm 48-Hour Hold Reservation" onAction="#onReserve"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

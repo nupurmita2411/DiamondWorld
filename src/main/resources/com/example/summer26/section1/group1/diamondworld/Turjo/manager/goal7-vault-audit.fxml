@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.VaultAuditController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 7: Audit Safe Vault Physical Inventory" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <HBox spacing="8">
+            <Label text="RFID / Barcode Input:"/>
+            <TextField fx:id="rfidField" promptText="RFID-1001, RFID-1002" HBox.hgrow="ALWAYS"/>
+            <Button text="Run Audit" onAction="#onAudit"/>
+        </HBox>
+        <TableView fx:id="discrepancyTable" prefHeight="140">
+            <columns>
+                <TableColumn fx:id="tagCol" text="RFID Tag" prefWidth="120"/>
+                <TableColumn fx:id="nameCol" text="Item Name" prefWidth="180"/>
+                <TableColumn fx:id="vaultCol" text="In Vault (System)" prefWidth="120"/>
+            </columns>
+        </TableView>
+        <Button text="Commit Audit Summary" onAction="#onCommit"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

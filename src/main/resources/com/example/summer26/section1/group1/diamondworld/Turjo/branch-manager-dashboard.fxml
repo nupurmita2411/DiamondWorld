@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.BranchManagerDashboardController"
+      spacing="12">
+    <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <VBox>
+            <Label text="Branch Manager Dashboard" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label fx:id="welcomeLabel" style="-fx-font-size: 14px;"/>
+        </VBox>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button text="Sign Out" onAction="#onSignOut"/>
+    </HBox>
+
+    <Separator/>
+    <Label text="Select a goal to execute workflow:" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+    <GridPane hgap="12" vgap="12">
+        <Button text="Goal 1: Approve Custom Design Requests" onAction="#openGoal1" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 2: Review Monthly Sales Reports" onAction="#openGoal2" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 3: Authorize Stock Replenishment" onAction="#openGoal3" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 4: Update Daily Gold Price" onAction="#openGoal4" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 5: Assign Sales Targets" onAction="#openGoal5" GridPane.columnIndex="0" GridPane.rowIndex="2" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 6: Handle Dispute Escalations" onAction="#openGoal6" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 7: Audit Vault Inventory" onAction="#openGoal7" GridPane.columnIndex="0" GridPane.rowIndex="3" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+        <Button text="Goal 8: Approve Expense Invoices" onAction="#openGoal8" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity" GridPane.hgrow="ALWAYS"/>
+    </GridPane>
+</VBox>
+

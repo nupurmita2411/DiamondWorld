@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.GoldPriceController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 4: Update Daily Gold Price per Gram" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <GridPane hgap="8" vgap="8">
+            <Label text="22K Gold (BDT/g):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="k22Field" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="21K Gold (BDT/g):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="k21Field" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="18K Gold (BDT/g):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="k18Field" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+        <Button text="Update Prices &amp; Recalculate Stock" onAction="#onUpdate"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

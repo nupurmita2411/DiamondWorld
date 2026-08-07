@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.StockSearchController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 2: Search Item Availability Across Branches" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <HBox spacing="8">
+            <Label text="Search Keyword:"/>
+            <TextField fx:id="keywordField" promptText="e.g. Solitaire Ring 1 Carat" HBox.hgrow="ALWAYS"/>
+            <Button text="Search Stock" onAction="#onSearch"/>
+        </HBox>
+        <TableView fx:id="resultTable" prefHeight="180">
+            <columns>
+                <TableColumn fx:id="nameCol" text="Product Name" prefWidth="180"/>
+                <TableColumn fx:id="branchCol" text="Branch" prefWidth="100"/>
+                <TableColumn fx:id="locationCol" text="Display Location" prefWidth="120"/>
+                <TableColumn fx:id="stockCol" text="Stock" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

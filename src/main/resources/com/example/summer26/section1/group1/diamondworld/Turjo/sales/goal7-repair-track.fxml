@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.RepairTrackController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 7: Track Jewellery Repair Progress" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <HBox spacing="8">
+            <Label text="Job Card Voucher No:"/>
+            <TextField fx:id="jobCardField" promptText="JC-2026-0088"/>
+            <Button text="Fetch Workshop Status" onAction="#onTrack"/>
+        </HBox>
+        <TextArea fx:id="statusArea" prefRowCount="6" editable="false"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

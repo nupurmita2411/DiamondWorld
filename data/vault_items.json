@@ -1,0 +1,17 @@
+[
+  {
+    "rfidTag": "RFID-1001",
+    "itemName": "Premium Solitaire Ring",
+    "inVault": true
+  },
+  {
+    "rfidTag": "RFID-1002",
+    "itemName": "Heritage Gold Set",
+    "inVault": true
+  },
+  {
+    "rfidTag": "RFID-1003",
+    "itemName": "Loose Diamond 2ct",
+    "inVault": false
+  }
+]

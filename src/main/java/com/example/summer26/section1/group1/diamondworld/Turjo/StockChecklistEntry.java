@@ -68,3 +68,7 @@ public class StockChecklistEntry {
         this.date = date;
     }
 }
+
+
+
+

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2120049",
+    "name": "Turjo Roy",
+    "role": "BRANCH_MANAGER",
+    "password": "bm123456"
+  },
+  {
+    "id": "2310973",
+    "name": "Nabila Bashar",
+    "role": "SALES_EXECUTIVE",
+    "password": "se123456"
+  },
+  {
+    "id": "2111520",
+    "name": "Mithila Farzana Richi",
+    "role": "SALES_EXECUTIVE",
+    "password": "se654321"
+  }
+]

@@ -73,3 +73,7 @@ public class StockReplenishmentRequest {
         return id + " - " + itemType + " (stock: " + currentStock + ")";
     }
 }
+
+
+
+

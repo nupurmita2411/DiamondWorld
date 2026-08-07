@@ -1,0 +1,15 @@
+[
+  {
+    "id": "CDR-001",
+    "customerName": "Karim Ahmed",
+    "metalType": "18K White Gold",
+    "ringSize": "7.5",
+    "diamondCut": "Princess",
+    "status": "Pending",
+    "feasible": true,
+    "gemstoneEstimate": 95000.0,
+    "metalWeight": 5.2,
+    "laborCost": 12000.0,
+    "markupFactor": 1.25
+  }
+]

@@ -41,3 +41,7 @@ public class GoldPrice {
         this.lastUpdated = lastUpdated;
     }
 }
+
+
+
+

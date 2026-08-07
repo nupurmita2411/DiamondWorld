@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.GoldExchangeController" spacing="10">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <HBox spacing="8">
+        <Button text="Back" onAction="#onBack"/>
+        <Label text="Goal 5: Process Old Gold Exchange &amp; Trade-In" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+    </HBox>
+    <VBox spacing="8">
+        <HBox spacing="8">
+            <Label text="Melting Weight (g):"/>
+            <TextField fx:id="weightField" promptText="10.5"/>
+            <Label text="Purity (%):"/>
+            <TextField fx:id="purityField" promptText="91.6"/>
+            <Button text="Calculate Exchange Value" onAction="#onCalculate"/>
+        </HBox>
+        <TextArea fx:id="voucherArea" prefRowCount="8" editable="false"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true"/>
+</VBox>
+

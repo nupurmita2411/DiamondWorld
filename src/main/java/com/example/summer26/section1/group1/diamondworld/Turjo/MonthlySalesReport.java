@@ -59,3 +59,7 @@ public class MonthlySalesReport {
         this.registerTotal = registerTotal;
     }
 }
+
+
+
+
