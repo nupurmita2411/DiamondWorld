@@ -141,8 +141,6 @@ public class DataStore {
         employees.add(new Employee("2310973", "Nabila Bashar", UserRole.SALES_EXECUTIVE, "se123456"));
         employees.add(new Employee("2111520", "Mithila Farzana Richi", UserRole.SALES_EXECUTIVE, "se654321"));
 
-        employees.add(new Employee("2231236", "Nupur Inventory", UserRole.INVENTORY_MANAGER, "inv123456"));
-        employees.add(new Employee("2231237", "Nupur CRM", UserRole.CUSTOMER_RELATIONSHIP_MANAGER, "crm123456"));
 
         products.add(createProduct("P001", "DW-RING-001", "Solitaire Ring 1 Carat", "Diamond Ring",
                 4.2, "VVS1", 185000, "Gulshan", "Case A-12", 3, "Available", "CERT-001"));
