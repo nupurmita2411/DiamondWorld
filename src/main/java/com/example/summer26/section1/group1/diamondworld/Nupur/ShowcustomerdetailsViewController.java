@@ -75,7 +75,7 @@ public class ShowcustomerdetailsViewController {
                 try {
 
                     Customer c = (Customer) ois.readObject();
-                    //customerTV.getItems().add(c);
+
 
                 } catch (EOFException e) {
 

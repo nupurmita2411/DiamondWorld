@@ -61,7 +61,7 @@ public class ShowproductViewController {
             while (true) {
                 try {
                     Product p = (Product) ois.readObject();
-                    //productTV.getItems().add(p);
+
                 } catch (EOFException e) {
                     messageLabel.setText("Products loaded successfully.");
                     ois.close();
