@@ -51,7 +51,7 @@ public class Use8Dashboard {
     @FXML
     public void logOutButtonOA(ActionEvent actionEvent) throws IOException {
 
-        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/login.fxml", actionEvent);
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/login1.fxml", actionEvent);
 
     }
 }
