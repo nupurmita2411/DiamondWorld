@@ -38,6 +38,7 @@
 
         <!-- Goal-8 Button -->
         <Button layoutX="125.0" layoutY="430.0" mnemonicParsing="false" onAction="#btnGoal8OnClick" prefHeight="35.0" prefWidth="350.0" text="Stock Turnover Report Generation" />
+      <Button layoutX="261.0" layoutY="510.0" mnemonicParsing="false" onAction="#logOutButtonOA" prefHeight="25.0" prefWidth="76.0" text="log out" />
 
     </children>
 </AnchorPane>

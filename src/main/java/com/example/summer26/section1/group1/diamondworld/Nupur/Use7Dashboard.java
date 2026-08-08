@@ -52,4 +52,11 @@ public class Use7Dashboard {
     public void btnGoal8OnClick(ActionEvent actionEvent) throws IOException {
         ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User7Goal8.fxml", actionEvent);
     }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent actionEvent) throws IOException {
+
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/login.fxml", actionEvent);
+
+    }
 }
