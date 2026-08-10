@@ -5,25 +5,46 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.StockSearchController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 2: Search Item Availability Across Branches" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Search Keyword:"/>
             <TextField fx:id="keywordField" promptText="e.g. Solitaire Ring 1 Carat" HBox.hgrow="ALWAYS"/>
-            <Button text="Search Stock" onAction="#onSearch"/>
+            <Button text="Search Stock" onAction="#onSearch" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TableView fx:id="resultTable" prefHeight="180">
+
+        <Label text="Stock Inventory Items (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="resultTable" prefHeight="180" editable="true">
             <columns>
                 <TableColumn fx:id="nameCol" text="Product Name" prefWidth="180"/>
-                <TableColumn fx:id="branchCol" text="Branch" prefWidth="100"/>
-                <TableColumn fx:id="locationCol" text="Display Location" prefWidth="120"/>
-                <TableColumn fx:id="stockCol" text="Stock" prefWidth="80"/>
+                <TableColumn fx:id="branchCol" text="Branch" prefWidth="120"/>
+                <TableColumn fx:id="locationCol" text="Display Location" prefWidth="140"/>
+                <TableColumn fx:id="stockCol" text="Stock" prefWidth="90"/>
             </columns>
         </TableView>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Stock Product Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameInput" promptText="e.g. Diamond Necklace" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Branch:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="branchInput" promptText="e.g. Gulshan Branch" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="Location:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="locationInput" promptText="e.g. Case A-3" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Stock Qty:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="stockInput" promptText="e.g. 5" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Stock Item" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

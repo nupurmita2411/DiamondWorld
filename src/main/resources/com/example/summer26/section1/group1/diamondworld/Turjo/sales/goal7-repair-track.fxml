@@ -5,18 +5,48 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.RepairTrackController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 7: Track Jewellery Repair Progress" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Job Card Voucher No:"/>
             <TextField fx:id="jobCardField" promptText="JC-2026-0088"/>
-            <Button text="Fetch Workshop Status" onAction="#onTrack"/>
+            <Button text="Fetch Workshop Status" onAction="#onTrack" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TextArea fx:id="statusArea" prefRowCount="6" editable="false"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
+        <TextArea fx:id="statusArea" prefRowCount="4" editable="true" promptText="Workshop status details (Editable)"/>
 
+        <Separator/>
+        <Label text="Workshop Repair Job Register (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="repairTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="cardCol" text="Job Card No" prefWidth="120"/>
+                <TableColumn fx:id="customerCol" text="Customer" prefWidth="140"/>
+                <TableColumn fx:id="itemCol" text="Item Description" prefWidth="160"/>
+                <TableColumn fx:id="stageCol" text="Current Stage" prefWidth="130"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Repair Job Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="Job Card:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="cardInput" promptText="e.g. JC-2026-0100" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Customer:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="customerInput" promptText="e.g. Anisur Rahman" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="Item:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="itemInput" promptText="e.g. Gold Chain Polish" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Stage:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="stageInput" promptText="e.g. POLISHING" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Repair Job" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

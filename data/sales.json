@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "invoiceId": "INV-1786132054375",
+    "productBarcode": "DW-RING-001",
+    "productName": "Solitaire Ring 1 Carat",
+    "customerPhone": "01616822366",
+    "subtotal": 185000.0,
+    "discount": 0.0,
+    "tax": 9250.0,
+    "total": 194250.0,
+    "paymentMode": "Cash",
+    "date": "2026-08-08"
+  }
+]

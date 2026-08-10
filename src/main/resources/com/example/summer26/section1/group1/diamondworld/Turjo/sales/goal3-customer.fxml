@@ -5,10 +5,11 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.CustomerProfileController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 3: Create Loyalty Customer Profile" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
         <GridPane hgap="8" vgap="8">
             <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
@@ -20,8 +21,28 @@
             <Label text="Government NID:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
             <TextField fx:id="nidField" promptText="1990123456789" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
         </GridPane>
-        <Button text="Register &amp; Activate Loyalty" onAction="#onRegister"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
+        <Button text="Register &amp; Activate Loyalty" onAction="#onRegister" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
 
+        <Separator/>
+        <Label text="Customer Loyalty Directory (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="customerTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="140"/>
+                <TableColumn fx:id="phoneCol" text="Phone" prefWidth="120"/>
+                <TableColumn fx:id="emailCol" text="Email" prefWidth="140"/>
+                <TableColumn fx:id="pointsCol" text="Loyalty Points" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Customer Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <HBox spacing="8">
+                <Button text="Add Customer Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

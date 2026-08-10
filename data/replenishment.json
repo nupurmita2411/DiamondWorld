@@ -6,6 +6,6 @@
     "requestedQty": 50,
     "currentStock": 12,
     "minThreshold": 40,
-    "status": "Pending"
+    "status": "Authorized"
   }
 ]

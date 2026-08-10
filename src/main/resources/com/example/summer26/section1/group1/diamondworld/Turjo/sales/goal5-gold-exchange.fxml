@@ -5,20 +5,41 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.GoldExchangeController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 5: Process Old Gold Exchange &amp; Trade-In" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Melting Weight (g):"/>
             <TextField fx:id="weightField" promptText="10.5"/>
             <Label text="Purity (%):"/>
             <TextField fx:id="purityField" promptText="91.6"/>
-            <Button text="Calculate Exchange Value" onAction="#onCalculate"/>
+            <Button text="Calculate Exchange Value" onAction="#onCalculate" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TextArea fx:id="voucherArea" prefRowCount="8" editable="false"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <TextArea fx:id="voucherArea" prefRowCount="4" editable="true" promptText="Generated voucher text (Editable)"/>
+
+        <Separator/>
+        <Label text="Trade-In Voucher Records (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="exchangeTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="descCol" text="Item Description" prefWidth="180"/>
+                <TableColumn fx:id="weightCol" text="Weight (g)" prefWidth="110"/>
+                <TableColumn fx:id="purityCol" text="Purity (%)" prefWidth="110"/>
+                <TableColumn fx:id="valueCol" text="Credit (BDT)" prefWidth="130"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Trade-In Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <HBox spacing="8">
+                <Button text="Add Exchange Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

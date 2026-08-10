@@ -9,8 +9,8 @@
     "price": 185000.0,
     "branch": "Gulshan",
     "displayLocation": "Case A-12",
-    "stock": 3,
-    "status": "Available",
+    "stock": 2,
+    "status": "Reserved",
     "certificateLink": "CERT-001"
   },
   {
@@ -48,7 +48,7 @@
     "category": "Gold",
     "weightGrams": 15.0,
     "clarity": "N/A",
-    "price": 95000.0,
+    "price": 169912.5,
     "branch": "Dhanmondi",
     "displayLocation": "Case C-07",
     "stock": 8,

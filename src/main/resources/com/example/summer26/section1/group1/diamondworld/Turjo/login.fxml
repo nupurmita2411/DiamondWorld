@@ -1,33 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController"
-      alignment="CENTER" spacing="16">
-    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 0; -fx-background: #f0f4f8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController">
+   <content>
+      <StackPane style="-fx-background-color: linear-gradient(to bottom right, #f0f4f8, #d9e2ec); -fx-padding: 24;">
+         <children>
+            <VBox alignment="CENTER" maxWidth="460.0" spacing="20" style="-fx-background-color: #ffffff; -fx-background-radius: 16; -fx-padding: 32; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 16, 0, 0, 6);" StackPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" spacing="6">
+                     <children>
+                        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="DIAMOND WORLD" textAlignment="CENTER" wrapText="true" />
+                        <Label style="-fx-font-size: 13px; -fx-text-fill: #64748b;" text="Jewellery Shop Management System" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </VBox>
 
-    <VBox alignment="CENTER" maxWidth="420" spacing="4">
-        <Label text="DIAMOND WORLD" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
-        <Label text="Jewellery Shop Management System" style="-fx-font-size: 14px;"/>
-    </VBox>
+                  <Separator style="-fx-opacity: 0.6;" />
 
-    <VBox spacing="12" maxWidth="420" alignment="CENTER_LEFT">
-        <Label text="Employee Login" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-        <Label text="Employee ID (7-digit)"/>
-        <TextField fx:id="employeeIdField" promptText="e.g. 2120049" maxWidth="Infinity"/>
-        <Label text="Password"/>
-        <PasswordField fx:id="passwordField" promptText="Min 6 chars, letters + digits" maxWidth="Infinity"/>
-        <Label fx:id="errorLabel" style="-fx-text-fill: red;" wrapText="true"/>
-        <HBox spacing="10" alignment="CENTER">
-            <Button text="Login" onAction="#onLogin" defaultButton="true"/>
-        </HBox>
-        <Separator/>
-        <Label text="Demo Accounts:" style="-fx-font-weight: bold;"/>
-        <Label text="Branch Manager: 2120049 / bm123456" wrapText="true"/>
-        <Label text="Sales Executive: 2310973 / se123456" wrapText="true"/>
-    </VBox>
-</VBox>
+                  <VBox alignment="TOP_LEFT" spacing="16">
+                     <children>
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #334155;" text="Employee Login" />
 
+                        <VBox spacing="6">
+                           <children>
+                              <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;" text="Employee ID (7-digit)" />
+                              <TextField fx:id="employeeIdField" maxWidth="Infinity" prefHeight="40" promptText="e.g. 2120049" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="6">
+                           <children>
+                              <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;" text="Password" />
+                              <PasswordField fx:id="passwordField" maxWidth="Infinity" prefHeight="40" promptText="Min 6 chars, letters + digits" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+
+                        <Button defaultButton="true" maxWidth="Infinity" onAction="#onLogin" prefHeight="44" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 15px; -fx-cursor: hand;" text="Login" />
+
+                        <Label fx:id="errorLabel" maxWidth="Infinity" style="-fx-text-fill: red; -fx-font-size: 12px;" wrapText="true" />
+                     </children>
+                  </VBox>
+
+                  <Separator style="-fx-opacity: 0.6;" />
+
+                  <VBox spacing="6" style="-fx-background-color: #ecf0f1; -fx-padding: 12; -fx-background-radius: 8;">
+                     <children>
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Demo Accounts:" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="• Branch Manager: 2120049 / bm123456" wrapText="true" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="• Sales Executive: 2310973 / se123456" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </content>
+</ScrollPane>
