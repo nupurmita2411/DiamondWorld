@@ -1,6 +1,8 @@
 package com.example.summer26.section1.group1.diamondworld.Nupur;
 
-public class Product  {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String productId;
     private String productName;
     private int stockQuantity;

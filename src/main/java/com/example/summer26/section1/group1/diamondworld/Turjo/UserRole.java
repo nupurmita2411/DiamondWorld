@@ -4,6 +4,7 @@ public enum UserRole {
     BRANCH_MANAGER("Branch Manager"),
     SALES_EXECUTIVE("Sales Executive");
 
+
     private final String displayName;
 
     UserRole(String displayName) {

@@ -47,7 +47,10 @@ public class LoginController {
                 Navigation.loadScene(
                         "/com/example/summer26/section1/group1/diamondworld/turjo/sales-executive-dashboard.fxml",
                         "Diamond World - Sales Executive Dashboard");
+
+
             }
+
         } catch (Exception e) {
             errorLabel.setText("Failed to load dashboard: " + e.getMessage());
         }

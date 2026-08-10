@@ -47,4 +47,11 @@ public class Use8Dashboard {
     public void btnGoal8OnClick(ActionEvent actionEvent) throws IOException {
         ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/Nupur/User8Goal8.fxml", actionEvent);
     }
+
+    @FXML
+    public void logOutButtonOA(ActionEvent actionEvent) throws IOException {
+
+        ScenceSwitcher.switchTo("/com/example/summer26/section1/group1/diamondworld/login1.fxml", actionEvent);
+
+    }
 }

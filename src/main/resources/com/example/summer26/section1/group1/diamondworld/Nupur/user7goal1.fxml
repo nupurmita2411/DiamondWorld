@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #F4F6F7;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.user7goal1">
+<AnchorPane fx:id="mainPane" prefHeight="550.0" prefWidth="750.0" style="-fx-background-color: #F4F6F7;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.user7goal1">
     <children>
 
 
@@ -60,12 +60,13 @@
         <TextField fx:id="txtStockQuantity" layoutX="519.0" layoutY="171.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter Quantity" AnchorPane.leftAnchor="519.0" AnchorPane.topAnchor="171.0" />
 
         <!-- event-7: Status Confirmation Label -->
-        <Label fx:id="confirmationMessage" layoutX="150.0" layoutY="476.0" prefHeight="20.0" prefWidth="569.0" textFill="#27AE60" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="476.0">
+        <Label fx:id="confirmationMessage" layoutX="19.333333333333332" layoutY="476.0" prefHeight="20.0" prefWidth="700.0" textFill="#27AE60" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="476.0">
             <font>
                 <Font name="System Italic" size="14.0" />
             </font>
         </Label>
-      <Button layoutX="362.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnsaveStock" prefHeight="35.0" prefWidth="130.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="Save " />
+      <Button layoutX="150.0" layoutY="397.0" mnemonicParsing="false" onAction="#btnsaveStock" prefHeight="35.0" prefWidth="130.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="Save " />
+      <Button layoutX="549.0" layoutY="506.0" mnemonicParsing="false" onAction="#nextButtonOA" prefHeight="35.0" prefWidth="130.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="Next page" />
 
     </children>
 </AnchorPane>

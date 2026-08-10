@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainPane" prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.summer26.section1.group1.diamondworld.Nupur.ShowproductViewController">
+
+    <children>
+
+        <Label layoutX="240.0" layoutY="15.0"
+               text="Show Products"
+               style="-fx-font-size:20px; -fx-font-weight:bold;" />
+
+        <TableView fx:id="productTV"
+                   layoutX="25.0"
+                   layoutY="60.0"
+                   prefHeight="320.0"
+                   prefWidth="650.0">
+
+            <columns>
+
+                <TableColumn fx:id="productIdTC"
+                             text="Product ID"
+                             prefWidth="120.0"/>
+
+                <TableColumn fx:id="productNameTC"
+                             text="Product Name"
+                             prefWidth="180.0"/>
+
+                <TableColumn fx:id="stockQuantityTC"
+                             text="Stock Quantity"
+                             prefWidth="160.0"/>
+
+                <TableColumn fx:id="priceTC"
+                             text="Price"
+                             prefWidth="170.0"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="180.0"
+                layoutY="410.0"
+                prefWidth="120.0"
+                text="Load"
+                onAction="#loadButtonOA"/>
+
+        <Button layoutX="360.0"
+                layoutY="410.0"
+                prefWidth="120.0"
+                text="Previous"
+                onAction="#previousButtonOA"/>
+
+        <Label fx:id="messageLabel"
+               layoutX="25.0"
+               layoutY="460.0"
+               prefWidth="650.0"
+               style="-fx-text-fill:green; -fx-font-size:14px;"/>
+
+    </children>
+
+</AnchorPane>
