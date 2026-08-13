@@ -570,6 +570,26 @@ public class DataStore {
     public boolean verifyBullionIndex(double k22) {
         return k22 >= 8000 && k22 <= 12000;
     }
+
+    public List<Customer> getAllCustomers() {
+        return new ArrayList<>(customers);
+    }
+
+    public List<Dispute> getAllDisputes() {
+        return new ArrayList<>(disputes);
+    }
+
+    public List<RepairJob> getAllRepairJobs() {
+        return new ArrayList<>(repairJobs);
+    }
+
+    public List<Reservation> getAllReservations() {
+        return new ArrayList<>(reservations);
+    }
+
+    public List<StockChecklistEntry> getAllChecklists() {
+        return new ArrayList<>(checklistEntries);
+    }
 }
 
 

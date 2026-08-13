@@ -20,10 +20,15 @@ public final class Navigation {
 
     public static void loadScene(String fxmlPath, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader(Navigation.class.getResource(fxmlPath));
-        Scene scene = new Scene(loader.load());
-        currentScene = scene;
+        javafx.scene.Parent root = loader.load();
+        if (primaryStage.getScene() != null) {
+            primaryStage.getScene().setRoot(root);
+        } else {
+            Scene scene = new Scene(root, 960, 640);
+            primaryStage.setScene(scene);
+            currentScene = scene;
+        }
         primaryStage.setTitle(title);
-        primaryStage.setScene(scene);
     }
 
     public static void goToLogin() throws IOException {

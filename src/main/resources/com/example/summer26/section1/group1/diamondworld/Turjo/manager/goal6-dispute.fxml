@@ -5,25 +5,56 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.DisputeController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 6: Handle Dispute Escalations" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Phone:"/>
             <TextField fx:id="phoneField" promptText="01712345678"/>
             <Label text="Invoice:"/>
             <TextField fx:id="invoiceField" promptText="INV-2026-0142"/>
-            <Button text="Search Dispute" onAction="#onSearch"/>
+            <Button text="Search Dispute" onAction="#onSearch" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TextArea fx:id="detailsArea" prefRowCount="6" editable="false"/>
-        <HBox spacing="8">
+        <TextArea fx:id="detailsArea" prefRowCount="4" editable="true" promptText="Dispute details area (Editable)"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Resolution:"/>
             <ComboBox fx:id="resolutionCombo" prefWidth="200"/>
-            <Button text="Settle Dispute" onAction="#onResolve"/>
+            <Button text="Settle Dispute" onAction="#onResolve" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <Separator/>
+        <Label text="Dispute Management Register (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="disputeTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="90"/>
+                <TableColumn fx:id="custPhoneCol" text="Customer Phone" prefWidth="130"/>
+                <TableColumn fx:id="invCol" text="Invoice ID" prefWidth="120"/>
+                <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="resCol" text="Resolution" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Dispute Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="idInput" promptText="e.g. DSP-001" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Phone:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="phoneInput" promptText="e.g. 01712345678" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="Invoice:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="invInput" promptText="e.g. INV-1001" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Status:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="statusInput" promptText="e.g. PENDING" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

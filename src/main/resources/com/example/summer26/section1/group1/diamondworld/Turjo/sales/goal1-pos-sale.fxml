@@ -5,26 +5,55 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.PosSaleController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Button text="Sign Out" onAction="#onSignOut"/>
         <Label text="Goal 1: Process Retail Sale &amp; Payment" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Barcode:"/>
             <TextField fx:id="barcodeField" promptText="DW-RING-001"/>
             <Button text="Scan Item" onAction="#onScan"/>
-        </HBox>
-        <HBox spacing="8">
             <Label text="Customer Mobile:"/>
             <TextField fx:id="phoneField" promptText="01712345678"/>
             <Label text="Payment Mode:"/>
-            <ComboBox fx:id="paymentCombo" prefWidth="130"/>
+            <ComboBox fx:id="paymentCombo" prefWidth="120"/>
+            <Button text="Complete Sale &amp; Print Receipt" onAction="#onCheckout" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <Button text="Complete Sale &amp; Print Receipt" onAction="#onCheckout"/>
-        <TextArea fx:id="receiptArea" prefRowCount="8" editable="false"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <Label text="Scanned Cart Items (Double-click cells to edit directly):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="cartTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="barcodeCol" text="Barcode" prefWidth="120"/>
+                <TableColumn fx:id="nameCol" text="Product Name" prefWidth="160"/>
+                <TableColumn fx:id="subtotalCol" text="Subtotal (BDT)" prefWidth="120"/>
+                <TableColumn fx:id="discountCol" text="Discount (BDT)" prefWidth="120"/>
+                <TableColumn fx:id="totalCol" text="Total (BDT)" prefWidth="120"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Cart Item Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="Barcode:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="barcodeInput" promptText="e.g. DW-RING-002" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Product Name:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameInput" promptText="e.g. Diamond Pendant" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="Subtotal:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="subtotalInput" promptText="e.g. 50000" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Discount:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="discountInput" promptText="e.g. 5000" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Cart Item" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+        <TextArea fx:id="receiptArea" prefRowCount="5" editable="true" promptText="Receipt output summary (Editable)"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

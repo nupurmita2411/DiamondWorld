@@ -5,20 +5,47 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.SalesReportController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 2: Monthly Sales Revenue Report" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="Month:"/>
             <TextField fx:id="monthField" prefWidth="60" promptText="6"/>
             <Label text="Year:"/>
             <TextField fx:id="yearField" prefWidth="80" promptText="2026"/>
-            <Button text="Generate Report" onAction="#onGenerate"/>
+            <Button text="Generate Report" onAction="#onGenerate" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TextArea fx:id="reportArea" prefRowCount="10" editable="false"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <Label text="Sales Category Breakdown (Double-click table cells to edit directly):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        
+        <TableView fx:id="reportTable" prefHeight="160" editable="true">
+            <columns>
+                <TableColumn fx:id="categoryCol" text="Category" prefWidth="160"/>
+                <TableColumn fx:id="grossCol" text="Gross Sales (BDT)" prefWidth="150"/>
+                <TableColumn fx:id="taxCol" text="Tax (15%) (BDT)" prefWidth="130"/>
+                <TableColumn fx:id="profitCol" text="Net Profit (BDT)" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Row Edit Controls:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="categoryInput" promptText="e.g. Diamond Jewellery" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Gross Sales:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="grossInput" promptText="e.g. 500000" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Category Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+        <TextArea fx:id="reportArea" prefRowCount="6" editable="true" promptText="Report summary area (Editable)"/>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

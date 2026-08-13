@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "RES-8DD368",
+    "itemTag": "DW-RING-001",
+    "customerId": "C001",
+    "customerName": "Karim Ahmed",
+    "expiryTimestamp": "2026-08-10 01:50",
+    "status": "Active"
+  }
+]

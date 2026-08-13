@@ -22,8 +22,9 @@ public class DiamondWorldApp extends Application {
 
         stage.setTitle("Diamond World - Jewellery Shop Management System");
         stage.setScene(scene);
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
+        stage.setMinWidth(360);
+        stage.setMinHeight(400);
+        stage.setResizable(true);
         stage.show();
     }
 

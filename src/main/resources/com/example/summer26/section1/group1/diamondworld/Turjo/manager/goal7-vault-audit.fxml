@@ -5,25 +5,45 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.VaultAuditController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Label text="Goal 7: Audit Safe Vault Physical Inventory" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
             <Label text="RFID / Barcode Input:"/>
             <TextField fx:id="rfidField" promptText="RFID-1001, RFID-1002" HBox.hgrow="ALWAYS"/>
-            <Button text="Run Audit" onAction="#onAudit"/>
+            <Button text="Run Audit" onAction="#onAudit" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <TableView fx:id="discrepancyTable" prefHeight="140">
+
+        <Label text="Vault Audit Physical Discrepancies (Double-click table cells to edit):" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+        <TableView fx:id="discrepancyTable" prefHeight="180" editable="true">
             <columns>
-                <TableColumn fx:id="tagCol" text="RFID Tag" prefWidth="120"/>
-                <TableColumn fx:id="nameCol" text="Item Name" prefWidth="180"/>
-                <TableColumn fx:id="vaultCol" text="In Vault (System)" prefWidth="120"/>
+                <TableColumn fx:id="tagCol" text="RFID Tag" prefWidth="140"/>
+                <TableColumn fx:id="nameCol" text="Item Name" prefWidth="200"/>
+                <TableColumn fx:id="vaultCol" text="In Vault Status" prefWidth="130"/>
             </columns>
         </TableView>
-        <Button text="Commit Audit Summary" onAction="#onCommit"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
 
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit / Add Vault Item Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="RFID Tag:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="tagInput" promptText="e.g. RFID-2005" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Item Name:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameInput" promptText="e.g. Diamond Necklace 5ct" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="In Vault (True/False):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="vaultInput" promptText="true or false" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Commit Audit Summary" onAction="#onCommit" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

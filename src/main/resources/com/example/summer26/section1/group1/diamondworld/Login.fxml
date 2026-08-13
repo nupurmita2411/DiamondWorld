@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500" prefWidth="450" style="-fx-background-color: #f0f4f8;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController">
-    <children>
-        <Label layoutX="120" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Diamond World Login" />
-        <Label layoutX="50" layoutY="80" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Employee ID:" />
-        <TextField fx:id="employeeIdField" layoutX="150" layoutY="75" prefWidth="250" promptText="Enter 7-digit Employee ID" style="-fx-background-radius: 6; -fx-padding: 8;" />
-        <Label layoutX="50" layoutY="130" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Password:" />
-        <PasswordField fx:id="passwordField" layoutX="150" layoutY="125" prefWidth="250" promptText="Enter password" style="-fx-background-radius: 6; -fx-padding: 8;" />
-        <Button layoutX="150" layoutY="180" onAction="#onLogin" prefWidth="250" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10; -fx-font-weight: bold;" text="Login" />
-        <Label fx:id="errorLabel" layoutX="50" layoutY="235" prefWidth="350" style="-fx-text-fill: #e74c3c; -fx-font-style: italic; -fx-font-size: 12px;" text="" wrapText="true" />
-        <VBox layoutX="50" layoutY="280" spacing="5" style="-fx-background-color: #ecf0f1; -fx-padding: 10; -fx-background-radius: 8;">
-            <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Test Credentials:" />
-            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="Branch Manager: ID=2120049, Password=bm123456" />
-            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="Sales Executive: ID=2310973, Password=se123456" />
-        </VBox>
-    </children>
-</AnchorPane>
+<ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 0; -fx-background: #f0f4f8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summer26.section1.group1.diamondworld.LoginController">
+   <content>
+      <StackPane style="-fx-background-color: linear-gradient(to bottom right, #f0f4f8, #d9e2ec); -fx-padding: 24;">
+         <children>
+            <VBox alignment="CENTER" maxWidth="460.0" spacing="20" style="-fx-background-color: #ffffff; -fx-background-radius: 16; -fx-padding: 32; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 16, 0, 0, 6);" StackPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" spacing="6">
+                     <children>
+                        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Diamond World Login" textAlignment="CENTER" wrapText="true" />
+                        <Label style="-fx-font-size: 13px; -fx-text-fill: #64748b;" text="Jewellery Shop Management System" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </VBox>
+
+                  <Separator style="-fx-opacity: 0.6;" />
+
+                  <VBox alignment="TOP_LEFT" spacing="16">
+                     <children>
+                        <VBox spacing="6">
+                           <children>
+                              <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;" text="Employee ID:" />
+                              <TextField fx:id="employeeIdField" maxWidth="Infinity" prefHeight="40" promptText="Enter 7-digit Employee ID" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="6">
+                           <children>
+                              <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #334155;" text="Password:" />
+                              <PasswordField fx:id="passwordField" maxWidth="Infinity" prefHeight="40" promptText="Enter password" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #cbd5e1; -fx-padding: 8 12; -fx-font-size: 14px;" />
+                           </children>
+                        </VBox>
+
+                        <Button defaultButton="true" maxWidth="Infinity" onAction="#onLogin" prefHeight="44" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 15px; -fx-cursor: hand;" text="Login" />
+
+                        <Label fx:id="errorLabel" maxWidth="Infinity" style="-fx-text-fill: #e74c3c; -fx-font-size: 12px; -fx-font-style: italic;" wrapText="true" />
+                     </children>
+                  </VBox>
+
+                  <Separator style="-fx-opacity: 0.6;" />
+
+                  <VBox spacing="6" style="-fx-background-color: #ecf0f1; -fx-padding: 12; -fx-background-radius: 8;">
+                     <children>
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Test Credentials:" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="• Branch Manager: ID=2120049, Password=bm123456" wrapText="true" />
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;" text="• Sales Executive: ID=2310973, Password=se123456" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </content>
+</ScrollPane>

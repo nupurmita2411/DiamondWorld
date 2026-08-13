@@ -3,23 +3,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.SalesTargetController" spacing="10">
-    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
-        <Label text="Goal 5: Assign Monthly Sales Targets" style="-fx-font-size:16;-fx-font-weight:bold;"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.SalesTargetController" spacing="12">
+    <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
+        <Label text="Goal 5: Assign Monthly Sales Targets" style="-fx-font-size:18;-fx-font-weight:bold; -fx-text-fill: #1e293b;"/>
     </HBox>
-    <VBox spacing="8">
-        <TableView fx:id="targetTable" prefHeight="180">
-            <columns>
-                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
-                <TableColumn fx:id="nameCol" text="Name" prefWidth="150"/>
-                <TableColumn fx:id="prevCol" text="Prev Sales" prefWidth="100"/>
-                <TableColumn fx:id="targetCol" text="Target Goal" prefWidth="120"/>
-            </columns>
-        </TableView>
-        <Button text="Save &amp; Assign Targets" onAction="#onSave"/>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true"/>
-</VBox>
+    
+    <Separator/>
+    
+    <Label text="• Double-click any table cell (ID, Name, Prev Sales, Target) to edit directly in the table." style="-fx-font-size:12; -fx-text-fill: #475569;" wrapText="true"/>
+    <Label text="• Or select a row to edit in the input form below, or add/delete rows as needed." style="-fx-font-size:12; -fx-text-fill: #475569;" wrapText="true"/>
+    
+    <TableView fx:id="targetTable" prefHeight="240" editable="true" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idCol" text="Employee ID" prefWidth="110"/>
+            <TableColumn fx:id="nameCol" text="Employee Name" prefWidth="180"/>
+            <TableColumn fx:id="prevCol" text="Prev Sales (BDT)" prefWidth="140"/>
+            <TableColumn fx:id="targetCol" text="Target Goal (BDT)" prefWidth="150"/>
+        </columns>
+    </TableView>
 
+    <!-- Row & Column Edit Controls -->
+    <VBox spacing="10" style="-fx-background-color: #f8fafc; -fx-padding: 12; -fx-background-radius: 8; -fx-border-color: #cbd5e1; -fx-border-radius: 8;">
+        <Label text="Row &amp; Column Edit Controls:" style="-fx-font-weight: bold; -fx-font-size: 13; -fx-text-fill: #334155;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="Employee ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="idInput" promptText="e.g. 2120049" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            
+            <Label text="Name:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="nameInput" promptText="e.g. John Doe" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            
+            <Label text="Prev Sales:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="prevInput" promptText="e.g. 150000" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            
+            <Label text="Target Goal:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="targetInput" promptText="e.g. 200000" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        </GridPane>
+        
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="Add New Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Button text="Update Selected Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Button text="Delete Selected Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Save &amp; Assign Targets" onAction="#onSave" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-cursor: hand;"/>
+        </HBox>
+    </VBox>
+    
+    <Label fx:id="statusLabel" wrapText="true" style="-fx-font-weight: bold;"/>
+</VBox>

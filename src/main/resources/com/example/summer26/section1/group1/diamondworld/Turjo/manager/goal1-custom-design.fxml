@@ -5,30 +5,53 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summer26.section1.group1.diamondworld.Turjo.CustomDesignApprovalController" spacing="10">
     <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
-    <HBox spacing="8">
-        <Button text="Back" onAction="#onBack"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Back" onAction="#onBack" style="-fx-font-weight: bold;"/>
         <Button text="Sign Out" onAction="#onSignOut"/>
         <Label text="Goal 1: Approve Custom Design Requests" style="-fx-font-size:16;-fx-font-weight:bold;"/>
     </HBox>
+    <Separator/>
     <VBox spacing="8">
-        <Button text="Open Pending Approval Module" onAction="#onLoadModule"/>
-        <HBox spacing="8">
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Button text="Load Pending Queue" onAction="#onLoadModule"/>
             <Label text="Request:"/>
-            <ComboBox fx:id="requestCombo" prefWidth="300"/>
+            <ComboBox fx:id="requestCombo" prefWidth="250"/>
             <Button text="Load Details" onAction="#onLoadDetails"/>
+            <Label text="Markup Factor:"/>
+            <TextField fx:id="markupField" prefWidth="70" promptText="1.25"/>
+            <Button text="Approve Request" onAction="#onApprove" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold;"/>
         </HBox>
-        <Label text="Markup Factor:"/>
-        <TextField fx:id="markupField" promptText="e.g. 1.25"/>
-        <Button text="Approve Request" onAction="#onApprove"/>
-        <TableView fx:id="detailsTable" prefHeight="150">
+        
+        <Label text="Double-click table cells to edit, or use row controls below:" style="-fx-font-size: 11; -fx-text-fill: #64748b;"/>
+
+        <TableView fx:id="detailsTable" prefHeight="200" editable="true">
             <columns>
-                <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
-                <TableColumn fx:id="customerCol" text="Customer" prefWidth="120"/>
-                <TableColumn fx:id="metalCol" text="Metal" prefWidth="120"/>
-                <TableColumn fx:id="quoteCol" text="Quote (BDT)" prefWidth="100"/>
+                <TableColumn fx:id="idCol" text="ID" prefWidth="90"/>
+                <TableColumn fx:id="customerCol" text="Customer Name" prefWidth="150"/>
+                <TableColumn fx:id="metalCol" text="Metal Type" prefWidth="130"/>
+                <TableColumn fx:id="laborCol" text="Labor Cost (BDT)" prefWidth="120"/>
+                <TableColumn fx:id="quoteCol" text="Quote (BDT)" prefWidth="120"/>
             </columns>
         </TableView>
-    </VBox>
-    <Label fx:id="statusLabel" wrapText="true" maxWidth="Infinity"/>
-</VBox>
 
+        <VBox spacing="8" style="-fx-background-color: #f8fafc; -fx-padding: 10; -fx-background-radius: 6; -fx-border-color: #cbd5e1; -fx-border-radius: 6;">
+            <Label text="Edit Row / Add New Request Row:" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+            <GridPane hgap="8" vgap="6">
+                <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="idInput" promptText="e.g. CR-101" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Customer:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <TextField fx:id="customerInput" promptText="e.g. Rahim" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                <Label text="Metal:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="metalInput" promptText="e.g. 22K Gold" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Labor Cost:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="laborInput" promptText="e.g. 8000" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            </GridPane>
+            <HBox spacing="8">
+                <Button text="Add Row" onAction="#onAddRow" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Update Row" onAction="#onUpdateRow" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Delete Row" onAction="#onDeleteRow" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+    <Label fx:id="statusLabel" wrapText="true" maxWidth="Infinity" style="-fx-font-weight: bold;"/>
+</VBox>
