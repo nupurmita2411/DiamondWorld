@@ -68,18 +68,21 @@ public class user7goal3 {
         String address = txtSupplierAddress.getText();
 
         if (id.isEmpty() || name.isEmpty()) {
-            Status.setText("Status: Please enter Supplier ID and Name!");
+            Status.setText("status: Please enter Supplier ID and Name!");
         } else {
 
             supplier s = new supplier(id, name, contact, email, address);
 
+           tblSuppliers.getItems().add(s);
+
 
             Status.setText("Status: Supplier added successfully!");
             txtSupplierId.clear();
-        txtSupplierName.clear();
-        txtContactNumber.clear();
-        txtEmailAddress.clear();
-        txtSupplierAddress.clear();
+            txtSupplierName.clear();
+            txtContactNumber.clear();
+            txtEmailAddress.clear();
+            txtSupplierAddress.clear();
+
         }
     }
 
@@ -94,6 +97,8 @@ public class user7goal3 {
             selectedSupplier.setContactNumber(txtContactNumber.getText());
             selectedSupplier.setEmailAddress(txtEmailAddress.getText());
             selectedSupplier.setAddress(txtSupplierAddress.getText());
+            selectedSupplier.setSupplierId(txtSupplierId.getText());
+
 
             tblSuppliers.refresh();
             Status.setText("Status: Supplier updated successfully!");
@@ -124,4 +129,32 @@ public class user7goal3 {
     }
 
 
+    @FXML
+    public void searchButtonOA(ActionEvent actionEvent) {
+
+        String searchName = txtSupplierName.getText().toLowerCase();
+
+
+        if (searchName.isEmpty()) {
+            Status.setText("Status: Please enter a Supplier Name to search!");
+            return;
+        }
+
+
+        tblSuppliers.getItems().clear();
+
+
+        for (supplier s : supplierlist) {
+            if (s.getSupplierName().toLowerCase().contains(searchName)) {
+                tblSuppliers.getItems().add(s);
+            }
+        }
+
+
+        if (tblSuppliers.getItems().isEmpty()) {
+            Status.setText("Status: No data found!");
+        } else {
+            Status.setText("Status: Data found (" + tblSuppliers.getItems().size() + " records)!");
+        }
+    }
 }

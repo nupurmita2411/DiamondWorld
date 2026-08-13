@@ -40,7 +40,6 @@ public class ShowproductViewController {
 
     @FXML
     public void initialize() {
-
         productIdTC.setCellValueFactory(new PropertyValueFactory<>("productId"));
         productNameTC.setCellValueFactory(new PropertyValueFactory<>("productName"));
         stockQuantityTC.setCellValueFactory(new PropertyValueFactory<>("stockQuantity"));
@@ -52,21 +51,29 @@ public class ShowproductViewController {
 
         File f = new File("product.bin");
 
-        try {
-            FileInputStream fis = new FileInputStream(f);
-            ObjectInputStream ois = new ObjectInputStream(fis);
+        if (!f.exists()) {
+            messageLabel.setText("No product file found!");
+            return;
+        }
 
-            productTV.getItems().clear();
+        productTV.getItems().clear();
+
+        try (FileInputStream fis = new FileInputStream(f);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             while (true) {
                 try {
                     Product p = (Product) ois.readObject();
-
+                    productTV.getItems().add(p);
                 } catch (EOFException e) {
-                    messageLabel.setText("Products loaded successfully.");
-                    ois.close();
                     break;
                 }
+            }
+
+            if (productTV.getItems().isEmpty()) {
+                messageLabel.setText("Product list is empty.");
+            } else {
+                messageLabel.setText("Products loaded successfully.");
             }
 
         } catch (Exception e) {
@@ -77,7 +84,6 @@ public class ShowproductViewController {
 
     @FXML
     public void previousButtonOA(ActionEvent actionEvent) {
-
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("user7goal1.fxml"));
             Node node = loader.load();

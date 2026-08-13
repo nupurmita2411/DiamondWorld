@@ -10,9 +10,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class user7goal1 {
@@ -45,16 +48,36 @@ public class user7goal1 {
     @FXML
     public void btnsaveStock(ActionEvent actionEvent) {
 
-        Product p = new Product(
-                txtProductId.getText(),
-                txtProductName.getText(),
-                Integer.parseInt(txtStockQuantity.getText()),
-                Double.parseDouble(TFPrice.getText())
-        );
+        String id = txtProductId.getText();
+        String name = txtProductName.getText();
+        String qtyText = txtStockQuantity.getText();
+        String priceText = TFPrice.getText();
 
-        File f = new File("product.bin");
+
+        if (id.isEmpty() || name.isEmpty() || qtyText.isEmpty() || priceText.isEmpty()) {
+            confirmationMessage.setText("Please fill in all required fields!");
+            return;
+        }
 
         try {
+            int quantity = Integer.parseInt(qtyText);
+            double price = Double.parseDouble(priceText);
+
+            if (quantity <= 0 || price <= 0) {
+                confirmationMessage.setText("Quantity and Price must be greater than 0!");
+                return;
+            }
+
+            File f = new File("product.bin");
+
+            if (isProductIdDuplicate(f, id)) {
+                confirmationMessage.setText("Product ID already exists! Enter a unique ID.");
+                return;
+            }
+
+
+            Product p = new Product(id, name, quantity, price);
+
             FileOutputStream fos;
             ObjectOutputStream oos;
 
@@ -71,6 +94,7 @@ public class user7goal1 {
 
             confirmationMessage.setText("Product saved successfully!");
 
+
             txtProductId.clear();
             txtProductName.clear();
             txtStockQuantity.clear();
@@ -79,15 +103,41 @@ public class user7goal1 {
             cmbBranch.setValue(null);
             cmbCategory.setValue(null);
 
+        } catch (NumberFormatException e) {
+            confirmationMessage.setText("Quantity and Price must be valid numbers!");
         } catch (Exception e) {
             confirmationMessage.setText("Could not save product!");
             e.printStackTrace();
         }
     }
 
+
+    private boolean isProductIdDuplicate(File f, String id) {
+        if (!f.exists()) {
+            return false;
+        }
+
+        try (FileInputStream fis = new FileInputStream(f);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            while (true) {
+                try {
+                    Product p = (Product) ois.readObject();
+                    if (p.getProductId() != null && p.getProductId().equals(id)) {
+                        return true;
+                    }
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     @FXML
     public void nextButtonOA(ActionEvent actionEvent) {
-
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowproductView.fxml"));
             Node node = loader.load();

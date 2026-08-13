@@ -37,10 +37,8 @@ public class User8goal1 {
 
     @FXML
     private TextArea preferencesTextArea;
-    @FXML
-    private Button saveProfileButton;
-    @FXML
-    private Button returnHomeButton;
+
+
     @FXML
     private AnchorPane mainPane;
 
